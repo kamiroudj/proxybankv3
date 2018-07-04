@@ -1,36 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="css/header.css" />
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/listeClients.css" rel="stylesheet">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="css/index.css">
+<!-- <link rel="stylesheet" href="css/listeClients.css"> -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>ProxibanqueV2</title>
 </head>
-<body>
 
-	<div class="navbar" width="100%">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#"> <img class="rounded-circle"
-				alt="logo" src="images/bank-icon.png">
-			</a>
-		</div>
-		<div id="titre1">
-			<h1>Proxibanque</h1>
-		</div>
-		<div id="username">
-			<a href="#">username</a> <a href="#">se dÃ©connecter</a>
-		</div>
+<body style="background-color: gray">
+	<div class=header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			<div class="roundedImage"></div>
+			<img id="logo" src="images/headerv2-logo.png" />
+			<h1 style="color: white">ProxiBanque</h1>
+			<div id="username">
+				<a id="userStatut" href="#">${sessionScope.conseiller.nom}</a>
+				<div id="disconect">
+
+
+					<!-- TODO mettre le lien pour l'icone logout -->
+
+
+					<a href="<c:url value='/logout'/>" ><img id="logout" src="images/logout-icon.png"
+						alt="se déconnecter" title="se déconnecter" /></a>
+				</div>
+			</div>
+		</nav>
 	</div>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<ul class="nav">
-			<li class="nav-item"><a class="nav-link active" href="#">Clients</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="#">Comptes</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">OpÃ©rations</a>
-			</li>
-		</ul>
-	</nav>

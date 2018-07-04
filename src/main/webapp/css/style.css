@@ -1,0 +1,23 @@
+
+
+div#connexion{
+    color: white;
+    margin-top:25vh;
+}
+
+.mid-logo{
+    height: 80px;
+}
+
+.bg-bank{
+    background-color: rgba(17,30,108,1.0);
+}
+
+.bg-bank-light{
+    background-color: #179bd7;
+}
+
+/* ECRAN 2 LISTE CLIENTS */
+.perso-pill{
+    padding: 1em;
+}
