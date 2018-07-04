@@ -23,7 +23,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="client" items="${sessionScope.clients}">
+				<c:forEach var="client" items="${clients}">
 					<tr>
 						<th scope="row">${client.id}</th>
 						<td>${client.nom}</td>

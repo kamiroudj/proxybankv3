@@ -26,7 +26,7 @@ public class LoginController {
 	
 	@RequestMapping("/auth")
 	public String selogger() {
-		return "/login";
+		return "login";
 	}
 	
 	
@@ -43,7 +43,7 @@ public class LoginController {
 		try {
 			conseiller = service.verifierLoginPassword(login, password);
 			session.setAttribute("conseiller", conseiller);
-			return "/listClient";
+			return "redirect:/listClient.html";
 		} catch (fr.gtm.proxibanque.business.LoginException e) {
 			String erreur = e.getMessage();
 			session.setAttribute("conseiller",  null);
