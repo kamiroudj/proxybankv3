@@ -46,7 +46,7 @@
 										style="width: 24px" style=height:24px /></a>
 								</div>
 								<div id="icones">
-									<a href="<c:url value="/comptes?idClient=${client.id}" />"  
+									<a href="<c:url value="/listComptes.html?idClient=${client.id}" />"  
 										title="ListComptes"><img id="CRUDIcons"
 										title="ListComptes" alt="ListComptes"
 										src="images/list-icon.png" style="width: 24px"

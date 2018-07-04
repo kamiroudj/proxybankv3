@@ -8,13 +8,6 @@
 	<servlet-name>spring-dispatcher</servlet-name>
 	
 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<!-- 	<init-param> 
-			<description>Configuration Spring : indiquer l'emplacement du fichier de
- 			configuration spring-beans définissant l'application context.
-			</description>
- 			<param-name>contextConfigLocation</param-name>
- 			<param-value>classpath:///spring-dispatcher-servlet.xml</param-value>
-		</init-param> -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
