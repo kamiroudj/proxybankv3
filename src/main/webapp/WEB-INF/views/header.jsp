@@ -2,33 +2,30 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="css/index.css">
-<!-- <link rel="stylesheet" href="css/listeClients.css"> -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<title>ProxibanqueV2</title>
-</head>
+<!-- utiliser HEAD.JSP avant ce fichier pour les import des ressources JS et CSS -->
 
-<body style="background-color: gray">
-	<div class=header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-			<div class="roundedImage"></div>
-			<img id="logo" src="images/headerv2-logo.png" />
-			<h1 style="color: white">ProxiBanque</h1>
-			<div id="username">
-				<a id="userStatut" href="#">${sessionScope.conseiller.nom}</a>
-				<div id="disconect">
+<body>
 
-
-					<!-- TODO mettre le lien pour l'icone logout -->
-
-
-					<a href="<c:url value='/logout'/>" ><img id="logout" src="images/logout-icon.png"
-						alt="se déconnecter" title="se déconnecter" /></a>
+	<!-- div de CONNEXION -->
+	<div class="container-fluid">
+		<header>
+			<div class="row shadow">
+				<div class="col-2 p-3">
+					<img src="<c:url value="img/proxybank.png"/>" alt=""
+						class="img-fluid mid-logo">
+				</div>
+				<div
+					class="col-8 d-flex flex-column justify-content-center align-items-center">
+					<h1 class="text-bank">Proxybank</h1>
+					<a href="<c:url value="/liste-client"/>"><i
+						class="fa fa-home text-bank fa-3x" aria-hidden="true"></i></a>
+				</div>
+				<!-- informations de la personne connéctée -->
+				<div
+					class="col-2  d-flex justify-content-center align-items-center flex-column">
+					<span class="text-center">Conseiller connecté</span> <a href=""
+						class="text-center">Se deconnecter</a>
 				</div>
 			</div>
-		</nav>
-	</div>
+
+		</header>
