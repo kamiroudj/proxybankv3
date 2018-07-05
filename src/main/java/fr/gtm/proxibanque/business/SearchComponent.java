@@ -24,7 +24,7 @@ public class SearchComponent {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
 	
-	private Integer idSearch;
+	private static Integer searchId = 0;
 	
 	private List<Client> foundClient;
 	
@@ -34,8 +34,8 @@ public class SearchComponent {
 	/**
 	 * @return the idSearch
 	 */
-	public Integer getIdSearch() {
-		return idSearch;
+	public Integer getsearchId() {
+		return searchId;
 	}
 
 
@@ -44,8 +44,8 @@ public class SearchComponent {
 	/**
 	 * @param idSearch the idSearch to set
 	 */
-	public void setIdSearch(Integer idSearch) {
-		this.idSearch = idSearch;
+	public void setsearchId() {
+		SearchComponent.searchId = searchId++;
 	}
 
 
@@ -59,8 +59,19 @@ public class SearchComponent {
 		
 		//verification de la première partie de la saisie
 		if(this.dao.findByNom(arraySearch[0]) !=null || this.dao.findByPrenom(arraySearch[0]) != null){
-			LOGGER.debug("COMPONENT : j'ai trouvé un client");
+			LOGGER.debug("COMPONENT : j'ai trouvé un client champs 1");
 			result = true;
+			
+		}else if(this.dao.findByNom(arraySearch[1]) !=null || this.dao.findByPrenom(arraySearch[1]) != null) {
+			LOGGER.debug("COMPONENT : j'ai trouvé un client champs 2");
+			result = true;
+		}
+		
+		if(result==true) {
+			
+			this.setsearchId();
+			searchId = this.getsearchId();
+			LOGGER.debug("COMPONENT : result ok je défini l'id"+searchId);
 		}
 		
 		return searchId;

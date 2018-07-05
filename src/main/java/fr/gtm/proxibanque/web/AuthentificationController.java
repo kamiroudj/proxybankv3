@@ -33,9 +33,9 @@ public class AuthentificationController {
 		
 		if(this.service.search(search)!=null) {
 			//NOM ou/et PRENOM ok
-			
+			Integer searchId = this.service.getSearchId();
 			//renvoie la jsp date avec l'id de la recherche
-			result = "verif-date?id=";
+			result = "verif-date";
 		}else {
 			
 			result = "erreur-conseiller";
@@ -45,6 +45,11 @@ public class AuthentificationController {
 		//SERVICE FAIL
 		//renvoie la jsp erreur si le service n'a rien
 //		return "redirect:/appel-conseiller.html";
+	}
+	
+	@RequestMapping("/verif-date")
+	public String verifDate() {
+		return "verif-date";
 	}
 	
 	

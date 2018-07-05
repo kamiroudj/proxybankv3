@@ -92,19 +92,18 @@ public class AuthentificationService {
 		//COMPONENT OK
 		if(myCompo.search(saisie)!=null) {
 	
+			searchId = myCompo.getsearchId();
 			//je stocke l'id du composant pour le passer au controller
 			this.setSearchId(searchId);
 			//je mets le component dans la collection
-			this.searchCompoCollec.put(searchId, myCompo);
-			searchId = myCompo.getIdSearch();
-			LOGGER.debug("SERVICE : search component à renvoyé  id :"+searchId);
+			//this.searchCompoCollec.put(myCompo.getsearchId(), myCompo);
+			
+			LOGGER.debug("SERVICE : search component à renvoyé  id :"+searchId.toString());
 			
 		}else {
+			//COMPONENT PAS OK = rien 
 			LOGGER.debug("SERVICE : component ne renvoi rien");
 		}
-			
-		//COMPONENT PAS OK = rien 
-		
 		
 		return searchId;
 		
