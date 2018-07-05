@@ -8,10 +8,8 @@
 	xmlns="http://java.sun.com/xml/ns/persistence/orm"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/kamiroudj/proxybankv3.git
+
 	
 	<entity class="fr.gtm.proxibanque.domain.Client">
 	
@@ -44,9 +42,7 @@
 			</many-to-one>
 		</attributes>
 	</entity>
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/kamiroudj/proxybankv3.git
+
 	
 </entity-mappings>
