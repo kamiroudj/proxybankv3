@@ -31,20 +31,23 @@ public class AuthentificationController {
 	public String chercher(@RequestParam String search) throws LoginException {
 		String result = null;
 		
-		if(this.service.chercher(search)==2) {
+		if(this.service.search(search)!=null) {
 			//NOM ou/et PRENOM ok
-			
+			Integer searchId = this.service.getSearchId();
 			//renvoie la jsp date avec l'id de la recherche
-			result = "verif-date?id=";
+			result = "verif-date";
+			//TODO envoi de l'id vers la vue verif date même page ou page differente?
 		}else {
 			
 			result = "erreur-conseiller";
 		}
 		
 		return result;
-		//SERVICE FAIL
-		//renvoie la jsp erreur si le service n'a rien
-//		return "redirect:/appel-conseiller.html";
+	}
+	
+	@RequestMapping("/verif-date")
+	public String verifDate() {
+		return "verif-date";
 	}
 	
 	
