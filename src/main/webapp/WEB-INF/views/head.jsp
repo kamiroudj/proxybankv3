@@ -11,7 +11,7 @@
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
-	href="<c:url value="css/font-awesome/css/font-awesome.min.css"/>">
+	href="<c:url value="font/font-awesome/css/font-awesome.min.css"/>">
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="css/bootstrap.min.css"/>" rel="stylesheet">
 <!-- Material Design Bootstrap -->

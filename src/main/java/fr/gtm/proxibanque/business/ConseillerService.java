@@ -42,7 +42,7 @@ public class ConseillerService {
 	}
 
 
-	public List<Compte> findComptesClient(int idClient) {
+	public List<Compte> findComptesClient(Integer idClient) {
 		
 		return daocp.findAllComptesClient(idClient);
 		//return null;
@@ -60,9 +60,9 @@ public class ConseillerService {
 		
 		Compte compteDebit = null;
 		Compte compteCredit = null;
-		//Compte compteDebit = daocp.findById(compDeb);
+		//Compte compteDebit = daocp.findById(compDeb); //à modifier
 		
-		//Compte compteCredit = daocp.findById(compCre);
+		//Compte compteCredit = daocp.findById(compCre); //à modifier
 		
 		if (compteDebit instanceof CompteCourant) {
 			if (montant > (compteDebit.getSolde() + ((CompteCourant)compteDebit).getDecouvert())) throw new SoldeException("Solde insuffisant");
