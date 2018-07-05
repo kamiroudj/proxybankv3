@@ -95,7 +95,7 @@ public class AuthentificationService {
 			searchId = myCompo.getsearchId();
 			//je stocke l'id du composant pour le passer au controller
 			this.setSearchId(searchId);
-			//je mets le component dans la collection
+			//TODO je mets le component dans la collection
 			//this.searchCompoCollec.put(myCompo.getsearchId(), myCompo);
 			
 			LOGGER.debug("SERVICE : search component à renvoyé  id :"+searchId.toString());

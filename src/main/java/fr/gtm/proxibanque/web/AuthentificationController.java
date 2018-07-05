@@ -36,15 +36,13 @@ public class AuthentificationController {
 			Integer searchId = this.service.getSearchId();
 			//renvoie la jsp date avec l'id de la recherche
 			result = "verif-date";
+			//TODO envoi de l'id vers la vue verif date même page ou page differente?
 		}else {
 			
 			result = "erreur-conseiller";
 		}
 		
 		return result;
-		//SERVICE FAIL
-		//renvoie la jsp erreur si le service n'a rien
-//		return "redirect:/appel-conseiller.html";
 	}
 	
 	@RequestMapping("/verif-date")

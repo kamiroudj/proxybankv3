@@ -69,6 +69,7 @@ public class SearchComponent {
 		
 		if(result==true) {
 			
+			// TODO vérifier si incrémenté?
 			this.setsearchId();
 			searchId = this.getsearchId();
 			LOGGER.debug("COMPONENT : result ok je défini l'id"+searchId);
