@@ -2,6 +2,12 @@ package fr.gtm.proxibanque.domain;
 
 import java.time.LocalDate;
 
+/**
+ * Compte est la classe représentant un compte bancaire chez Proxibanque
+ * 
+ * @author Mohammed, Kamir et Arnauld
+ * @version 3.0
+ */
 public class CarteBleue {
 
 	private Integer id;
@@ -13,6 +19,18 @@ public class CarteBleue {
 		super();
 	}
 
+	/**
+	 * Constructeur CarteBleue
+	 * 
+	 * @param id
+	 *            L'id unique de la carte bleue.
+	 * @param numCarte
+	 *            Le numéro de la carte Bleue.
+	 * @param type
+	 *            Le type de la carte bleue
+	 * @param dateExpiration
+	 *            La date d'expiration de la carte bancaire.
+	 */
 	public CarteBleue(Integer id, Integer numCarte, String type, LocalDate dateExpiration) {
 		super();
 		this.id = id;
