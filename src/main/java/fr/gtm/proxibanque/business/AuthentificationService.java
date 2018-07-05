@@ -1,9 +1,9 @@
 package fr.gtm.proxibanque.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import fr.gtm.proxibanque.dao.ClientRepository;
-import fr.gtm.proxibanque.domain.Conseiller;
 
 @Service
 public class AuthentificationService {
@@ -11,7 +11,7 @@ public class AuthentificationService {
 	@Autowired
 	private ClientRepository dao;
 
-	public Conseiller verifierLoginPassword(String login, String password) throws LoginException {
+	/*public Conseiller verifierLoginPassword(String login, String password) throws LoginException {
 
 		Conseiller conseiller = null;
 		if (login != null && password != null) {
@@ -22,6 +22,7 @@ public class AuthentificationService {
 		
 		return conseiller;
 
-}
+
+}*/
 
 }

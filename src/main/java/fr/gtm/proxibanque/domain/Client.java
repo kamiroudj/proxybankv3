@@ -8,6 +8,7 @@ package fr.gtm.proxibanque.domain;
 import java.time.LocalDate;
 import java.util.List;
 
+<<<<<<< HEAD
 public class Client {
 
 	private Integer id;
@@ -17,11 +18,24 @@ public class Client {
 	private Adresse adresse;
 	private List<Client> clients;
 
+=======
+public class Client  {
+	
+	private Integer id;
+	private Integer numClient;
+	private String nom; 
+	private String prenom; 
+	private LocalDate dateNaissance; 
+	private Adresse adresse;
+	private List<Compte> comptes; 
+	
+	
+>>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	public Client() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Constructeur Client.
 	 * 
@@ -40,13 +54,15 @@ public class Client {
 	 */
 	public Client(Integer id, String nom, String prenom, LocalDate dateNaissance, Adresse adresse,
 			List<Client> clients) {
+=======
+
+	public Client(Integer numClient, String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
+>>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 		super();
-		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
-		this.clients = clients;
 	}
 
 	public Integer getId() {
@@ -57,6 +73,21 @@ public class Client {
 		this.id = id;
 	}
 
+<<<<<<< HEAD
+=======
+	
+
+	public Integer getNumClient() {
+		return numClient;
+	}
+
+
+	public void setNumClient(Integer numClient) {
+		this.numClient = numClient;
+	}
+
+
+>>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	public String getNom() {
 		return nom;
 	}
@@ -89,12 +120,23 @@ public class Client {
 		this.adresse = adresse;
 	}
 
+<<<<<<< HEAD
 	public List<Client> getClients() {
 		return clients;
 	}
 
 	public void setClients(List<Client> clients) {
 		this.clients = clients;
+=======
+
+	public List<Compte> getComptes() {
+		return comptes;
+	}
+
+
+	public void setComptes(List<Compte> comptes) {
+		this.comptes = comptes;
+>>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	}
 
 }

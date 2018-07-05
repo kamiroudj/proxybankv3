@@ -8,6 +8,8 @@ package fr.gtm.proxibanque.domain;
  * @version 3.0.
  */
 public class Adresse {
+	
+	private Integer id;
 	private String codePostal;
 	private String ville;
 	private String pays;
@@ -16,7 +18,6 @@ public class Adresse {
 
 	public Adresse() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -42,6 +43,15 @@ public class Adresse {
 		this.pays = pays;
 		this.lignePrincipale = lignePrincipale;
 		this.ligneSecondaire = ligneSecondaire;
+	}
+
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getCodePostal() {

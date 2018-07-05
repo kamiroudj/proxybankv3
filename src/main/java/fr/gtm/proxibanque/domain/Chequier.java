@@ -12,11 +12,15 @@ public class Chequier {
 	private Integer id;
 	private LocalDate dateEnvoi;
 	private LocalDate dateReception;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	public Chequier() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Constructeur Chequier.
@@ -29,8 +33,10 @@ public class Chequier {
 	 *            La date de réception du chéquier.
 	 */
 	public Chequier(Integer id, LocalDate dateEnvoi, LocalDate dateReception) {
+=======
+	public Chequier(LocalDate dateEnvoi, LocalDate dateReception) {
+>>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 		super();
-		this.id = id;
 		this.dateEnvoi = dateEnvoi;
 		this.dateReception = dateReception;
 	}
