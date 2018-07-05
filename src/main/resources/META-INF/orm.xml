@@ -9,41 +9,38 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
 
-	<entity class="fr.gtm.proxibanque.domain.Personne">	
-	<inheritance strategy="JOINED"/>
+
+	
+	<entity class="fr.gtm.proxibanque.domain.Client">	
 		<attributes>
 			<id name="id">
 				<generated-value strategy="IDENTITY" />
 			</id>
+			<basic name="numClient">
+			<column precision="8"/>
+			</basic>
 			<basic name="nom" />
 			<basic name="prenom" />
-			<basic name="adresse" />
-			<basic name="telephone" />
-			<basic name="email" />
+			<basic name="dateNaissance" />
+			<one-to-many name="comptes" mapped-by="client" />	
+			<one-to-one name="adresse">
+				<join-column name="id_adresse" referenced-column-name="id" />
+			</one-to-one>			
 		</attributes>
 	</entity>
 	
-	<entity class="fr.gtm.proxibanque.domain.Conseiller">
-		<attributes>
-			<basic name="login" />
-			<basic name="password" />			
-			<one-to-many name="clients" mapped-by="conseiller" />				
-		</attributes>
-	</entity>
 	
-	<entity class="fr.gtm.proxibanque.domain.Client">
-	
-		<attributes>
-		
-		<many-to-one name="conseiller">
-		<join-table name="client_conseiller">
-		<join-column name="idClient"/>
-		<inverse-join-column name="idConseiller"/>
-		</join-table>
-		</many-to-one>
-		
-		<one-to-many name="comptes" mapped-by="client" />		
-		</attributes>
+	<entity class="fr.gtm.proxibanque.domain.Adresse">
+	<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="codePostal"/>
+			<basic name="ville" />
+			<basic name="pays" />
+			<basic name="lignePrincipale"/>
+			<basic name="ligneSecondaire" />	
+	</attributes>	
 	</entity>
 	
 	<entity class="fr.gtm.proxibanque.domain.Compte">
@@ -54,26 +51,48 @@
 			<id name="id">
 				<generated-value strategy="IDENTITY" />
 			</id>
+			<basic name="numCompte">
+			</basic>
+			<basic name="libelle"/>
+			<basic name="dateOuverture"/>
 			<basic name="solde" />
+			
 			<many-to-one name="client">
 			<join-table name="compte_client">
-			<join-column name="idCompte"/>
-			<inverse-join-column name="idClient"/>
+			<join-column name="id_compte"/>
+			<inverse-join-column name="id_client"/>
 			</join-table>	
 			</many-to-one>
+			
+			<one-to-one name="carteBleue">
+				<join-column name="id_carte" referenced-column-name="id" />
+			</one-to-one>
+			<one-to-one name="chequier">
+				<join-column name="id_chequier" referenced-column-name="id" />
+			</one-to-one>		
 		</attributes>
 	</entity>
-	
-		<entity class="fr.gtm.proxibanque.domain.CompteCourant">
-		<attributes>
-			<basic name="decouvert" />
-		</attributes>
+
+	<entity class="fr.gtm.proxibanque.domain.CarteBleue">
+	<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="numCarte">
+			</basic>
+			<basic name="type" />
+			<basic name="dateExpiration" />
+	</attributes>
 	</entity>
 	
-	<entity class="fr.gtm.proxibanque.domain.CompteEpargne">
-		<attributes>
-			<basic name="taux" />
-		</attributes>
+	<entity class="fr.gtm.proxibanque.domain.Chequier">
+	<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="dateEnvoi"/>
+			<basic name="dateReception" />
+	</attributes>
 	</entity>
 	
 </entity-mappings>

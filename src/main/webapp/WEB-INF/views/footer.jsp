@@ -1,5 +1,14 @@
+
 </div>
 	<!-- Footer -->
+	<footer class="page-footer font-small blue">
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2018 Copyright:
+			KMAProduction</div>
+		<!-- Copyright -->
+
+	</footer>
 	<!-- SCRIPTS -->
 	<!-- JQuery -->
 	<script type="text/javascript" src="<c:url value="js/jquery-3.3.1.min.js"/>"></script>

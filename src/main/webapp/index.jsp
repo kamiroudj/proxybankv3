@@ -8,6 +8,6 @@
 <title>Proxibanque</title>
 </head>
 <body>
-	<c:redirect url="/auth.html" />
+	<c:redirect url="/login.html" />
 </body>
 </html>
