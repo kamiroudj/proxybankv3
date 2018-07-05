@@ -6,7 +6,10 @@ package fr.gtm.proxibanque.business;
 
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
+
+
 
 
 
@@ -17,6 +20,10 @@ public class AuthentificationService {
 	private ObjectFactory<SearchComponent> facto;
 	
 	private Integer id;
+
+
+	/*public Conseiller verifierLoginPassword(String login, String password) throws LoginException {
+>>>>>>> a1fbc038db14de182674a0ec2e54e2a2feb78ec2
 
 	/**
 	 * Méthode permerttant de retrouver les utilisateurs correspondants à la saisie
@@ -49,7 +56,5 @@ public class AuthentificationService {
 //		return conseiller;
 
 	}
-	
-	
 
 }

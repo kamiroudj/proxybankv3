@@ -1,6 +1,8 @@
 package fr.gtm.proxibanque.domain;
+
 /**
  * Compte est la classe représentant un compte bancaire chez Proxibanque 
+
  * @author Mohammed, Kamir et Arnauld
  * @version 3.0
  */
@@ -21,6 +23,18 @@ public class Compte {
 		super();
 	}
 
+	/**
+	 * Compte constructeur.
+	 * 
+	 * @param numCompte
+	 *            Le numéro de compte
+	 * @param dateOuverture
+	 *            La date d'ouverture du compte bancaire.
+	 * @param solde
+	 *            Le solde du compte.
+	 * @param libelle
+	 *            Le libelle.
+	 */
 	public Compte(Integer numCompte, LocalDate dateOuverture, Double solde, String libelle) {
 		super();
 		this.numCompte = numCompte;
