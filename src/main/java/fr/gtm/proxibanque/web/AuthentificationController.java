@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.gtm.proxibanque.business.AuthentificationService;
+import fr.gtm.proxibanque.business.LoginException;
 
 /**
  * @author Adminl
@@ -27,14 +28,20 @@ public class AuthentificationController {
 	}
 	
 	@PostMapping("/login")
-	public String verifSaisie(@RequestParam String search) {
+	public String chercher(@RequestParam String search) throws LoginException {
+		String result = null;
 		
+		if(this.service.chercher(search)==2) {
+			//NOM ou/et PRENOM ok
+			
+			//renvoie la jsp date avec l'id de la recherche
+			result = "verif-date?id=";
+		}else {
+			
+			result = "erreur-conseiller";
+		}
 		
-		//NOM ou/et PRENOM ok
-		
-			//renvoie la jsp date
-			return "";
-		
+		return result;
 		//SERVICE FAIL
 		//renvoie la jsp erreur si le service n'a rien
 //		return "redirect:/appel-conseiller.html";

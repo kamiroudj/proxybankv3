@@ -35,7 +35,8 @@
 	</bean>
 	<!-- bean searchComponent -->
 	<bean id="searchComponent"
-		class="fr.gtm.proxibanque.business.SearchComponent">
+		class="fr.gtm.proxibanque.business.SearchComponent" scope="prototype">
+		
 	</bean>
 	
 	

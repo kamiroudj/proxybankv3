@@ -20,6 +20,8 @@ public class AuthentificationService {
 	private ObjectFactory<SearchComponent> facto;
 	
 	private Integer id;
+	
+	// TODO map de stockage des composants de recherche
 
 	/**
 	 * Méthode permerttant de retrouver les utilisateurs correspondants à la saisie
@@ -32,8 +34,11 @@ public class AuthentificationService {
 	public Integer chercher(String saisie) throws LoginException {
 		
 		Integer searchId = null;
-		
+		SearchComponent myCompo = this.facto.getObject();
 		//j'envoie le String de saisie à mon composant
+		if(myCompo.search(saisie)==true) {
+			searchId = 2;
+		}
 		
 		//si je reçois un id depuis le component
 		
