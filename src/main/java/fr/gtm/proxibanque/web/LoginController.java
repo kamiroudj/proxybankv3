@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import fr.gtm.proxibanque.business.AuthentificationService;
 
-
+@Deprecated
 @Controller
 public class LoginController {
 	
