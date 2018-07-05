@@ -8,8 +8,7 @@ import java.time.LocalDate;
 
 public class Compte {
 	private Integer id;
-	private Integer nCompte;
-	private String type;
+	private Integer numCompte;
 	private LocalDate dateOuverture;
 	private Double solde;
 	private String libelle;
@@ -18,20 +17,14 @@ public class Compte {
 
 	public Compte() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Compte(Integer id, Integer nCompte, String type, LocalDate dateOuverture, Double solde, String libelle,
-			Chequier chequier, CarteBleue carteBleue) {
+	public Compte(Integer numCompte, LocalDate dateOuverture, Double solde, String libelle) {
 		super();
-		this.id = id;
-		this.nCompte = nCompte;
-		this.type = type;
+		this.numCompte = numCompte;
 		this.dateOuverture = dateOuverture;
 		this.solde = solde;
 		this.libelle = libelle;
-		this.chequier = chequier;
-		this.carteBleue = carteBleue;
 	}
 
 	public Integer getId() {
@@ -42,20 +35,20 @@ public class Compte {
 		this.id = id;
 	}
 
-	public Integer getnCompte() {
-		return nCompte;
+	public Integer getNumCompte() {
+		return numCompte;
 	}
 
-	public void setnCompte(Integer nCompte) {
-		this.nCompte = nCompte;
+	public void setNumCompte(Integer numCompte) {
+		this.numCompte = numCompte;
 	}
 
-	public String getType() {
-		return type;
+	public String getLibelle() {
+		return TypeCompte.valueOf(libelle).name();
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType(TypeCompte type) {
+		this.libelle = type.name();
 	}
 
 	public LocalDate getDateOuverture() {
@@ -72,14 +65,6 @@ public class Compte {
 
 	public void setSolde(Double solde) {
 		this.solde = solde;
-	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
 	}
 
 	public Chequier getChequier() {

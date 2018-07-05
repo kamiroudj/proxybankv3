@@ -5,19 +5,18 @@ import java.time.LocalDate;
 public class CarteBleue {
 
 	private Integer id;
-	private Integer nCompte;
+	private Integer numCarte;
 	private String type;
 	private LocalDate dateExpiration;
 
 	public CarteBleue() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public CarteBleue(Integer id, Integer nCompte, String type, LocalDate dateExpiration) {
+	public CarteBleue(Integer id, Integer numCarte, String type, LocalDate dateExpiration) {
 		super();
 		this.id = id;
-		this.nCompte = nCompte;
+		this.numCarte = numCarte;
 		this.type = type;
 		this.dateExpiration = dateExpiration;
 	}
@@ -30,20 +29,20 @@ public class CarteBleue {
 		this.id = id;
 	}
 
-	public Integer getnCompte() {
-		return nCompte;
+	public Integer getNumCarte() {
+		return numCarte;
 	}
 
-	public void setnCompte(Integer nCompte) {
-		this.nCompte = nCompte;
+	public void setNumCarte(Integer numCarte) {
+		this.numCarte = numCarte;
 	}
 
 	public String getType() {
-		return type;
+		return TypeCarte.valueOf(type).name();
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType(TypeCarte type) {
+		this.type = type.name();
 	}
 
 	public LocalDate getDateExpiration() {
