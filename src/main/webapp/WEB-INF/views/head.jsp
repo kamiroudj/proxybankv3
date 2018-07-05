@@ -11,13 +11,13 @@
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
-	href="<c:url value="font/font-awesome/css/font-awesome.min.css"/>">
+	href="<c:url value='font/font-awesome/css/font-awesome.min.css'/>">
 <!-- Bootstrap core CSS -->
-<link href="<c:url value="css/bootstrap.min.css"/>" rel="stylesheet">
+<link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet">
 <!-- Material Design Bootstrap -->
-<link href="<c:url value="css/mdb.min.css"/>" rel="stylesheet"/>
+<link href="<c:url value='/css/mdb.min.css'/>" rel="stylesheet"/>
 <!-- Css perso -->
-<link href="<c:url value="css/style.css"/>" rel="stylesheet"/>
+<link href="<c:url value='/css/style.css'/>" rel="stylesheet"/>
 </head>
 <body>
     <div class="container-fluid">

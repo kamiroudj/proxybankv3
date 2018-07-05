@@ -16,10 +16,6 @@ INSERT INTO `client` (`id`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VA
 (7,'Roussel', 'Sylvain', '4 rue de la glacière,75014 Paris', '0616657835', 'pre7.nom7@boitemail.fr');
 
 
-
-
-
-
 -- --------------------------------------------------------
 --
 -- Déchargement des données de la table `comptes`

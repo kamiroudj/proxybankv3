@@ -8,10 +8,11 @@
                         
                             <p class="h4 text-bank-light text-center py-4">Retrait</p>
 
-                            <label for="compte" class="font-weight-light">Choix du compte à  débiter :</label>
+                            <label for="compte" class="font-weight-light">Choix du compte Ã Â dÃ©biter :</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="compteDebit">
-                                <option value="${compte1}">Compte 1</option>
-                                <option value="${compte2}">Compte 2</option>
+                				 <c:forEach var="compte" items="${comptes}">
+									<option value="${compte.id}">${compte.numCompte}</option>
+								 </c:forEach>
                             </select>
 
                             <div class="md-form">
