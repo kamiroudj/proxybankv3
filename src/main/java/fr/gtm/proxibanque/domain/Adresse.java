@@ -1,5 +1,12 @@
 package fr.gtm.proxibanque.domain;
 
+/**
+ * Adresse est la classe représentant l'adresse d'un client de la banque
+ * Broxibanque.
+ * 
+ * @author Mohammed, Kamir et Arnauld.
+ * @version 3.0.
+ */
 public class Adresse {
 	private String codePostal;
 	private String ville;
@@ -12,6 +19,22 @@ public class Adresse {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Constructeur Adresse.
+	 * 
+	 * @param codePostal
+	 *            Le code postal de la ville du client.
+	 * @param ville
+	 *            La ville où habite client.
+	 * @param pays
+	 *            Le pays du client.
+	 * @param lignePrincipale
+	 *            La ligne principale de l'adresse du client qui comprend le numéro
+	 *            de la rue et son nom.
+	 * @param ligneSecondaire
+	 *            La ligne secondaire de l'adresse du client qui comprend des
+	 *            informations supplémentaires sur l'adresse.
+	 */
 	public Adresse(String codePostal, String ville, String pays, String lignePrincipale, String ligneSecondaire) {
 		super();
 		this.codePostal = codePostal;
