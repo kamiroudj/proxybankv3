@@ -8,34 +8,20 @@ package fr.gtm.proxibanque.domain;
 import java.time.LocalDate;
 import java.util.List;
 
-<<<<<<< HEAD
 public class Client {
 
 	private Integer id;
+	private Integer numClient;
 	private String nom;
 	private String prenom;
 	private LocalDate dateNaissance;
 	private Adresse adresse;
-	private List<Client> clients;
+	private List<Compte> comptes;
 
-=======
-public class Client  {
-	
-	private Integer id;
-	private Integer numClient;
-	private String nom; 
-	private String prenom; 
-	private LocalDate dateNaissance; 
-	private Adresse adresse;
-	private List<Compte> comptes; 
-	
-	
->>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	public Client() {
 		super();
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Constructeur Client.
 	 * 
@@ -52,12 +38,9 @@ public class Client  {
 	 * @param clients
 	 *            La liste des clients d'une banque Broxibanque.
 	 */
-	public Client(Integer id, String nom, String prenom, LocalDate dateNaissance, Adresse adresse,
-			List<Client> clients) {
-=======
 
 	public Client(Integer numClient, String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
->>>>>>> b77395a6306df135877c84029b2acc600d8bc676
+
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -73,21 +56,14 @@ public class Client  {
 		this.id = id;
 	}
 
-<<<<<<< HEAD
-=======
-	
-
 	public Integer getNumClient() {
 		return numClient;
 	}
-
 
 	public void setNumClient(Integer numClient) {
 		this.numClient = numClient;
 	}
 
-
->>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	public String getNom() {
 		return nom;
 	}
@@ -120,23 +96,14 @@ public class Client  {
 		this.adresse = adresse;
 	}
 
-<<<<<<< HEAD
-	public List<Client> getClients() {
-		return clients;
-	}
-
-	public void setClients(List<Client> clients) {
-		this.clients = clients;
-=======
 
 	public List<Compte> getComptes() {
 		return comptes;
 	}
 
-
 	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;
->>>>>>> b77395a6306df135877c84029b2acc600d8bc676
+
 	}
 
 }

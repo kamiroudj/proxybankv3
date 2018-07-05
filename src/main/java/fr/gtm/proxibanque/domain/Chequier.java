@@ -2,6 +2,7 @@ package fr.gtm.proxibanque.domain;
 
 /**
  * Chequier est la classe représentant un chéquier d'un client 
+
  * @author Mohammed, Kamir et Arnauld.
  * @version 3.0.
  */
@@ -12,15 +13,10 @@ public class Chequier {
 	private Integer id;
 	private LocalDate dateEnvoi;
 	private LocalDate dateReception;
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> b77395a6306df135877c84029b2acc600d8bc676
 	public Chequier() {
 		super();
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Constructeur Chequier.
@@ -32,10 +28,9 @@ public class Chequier {
 	 * @param dateReception
 	 *            La date de réception du chéquier.
 	 */
-	public Chequier(Integer id, LocalDate dateEnvoi, LocalDate dateReception) {
-=======
+
 	public Chequier(LocalDate dateEnvoi, LocalDate dateReception) {
->>>>>>> b77395a6306df135877c84029b2acc600d8bc676
+
 		super();
 		this.dateEnvoi = dateEnvoi;
 		this.dateReception = dateReception;
