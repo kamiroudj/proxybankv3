@@ -23,6 +23,7 @@ public class ListCompteController {
 		System.out.println("idClient  "+idClient);
 		
 		List<Compte> comptes = service.findComptesClient(idClient);
+		System.out.println("comptes "+comptes);
 		
 		model.addAttribute("comptes", comptes);
 		return "listeComptes";
