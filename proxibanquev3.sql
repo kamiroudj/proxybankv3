@@ -6,7 +6,7 @@
 -- Déchargement des données de la table `personne`
 --
 
-INSERT INTO `personne` (`id`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VALUES
+INSERT INTO `client` (`id`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VALUES
 (1,'Durieux', 'Elocia', '20, avenue Gambetta, Paris', '0154859632', 'pre1.nom1@boitemail.fr'),
 (2,'john', 'vanhertmann', '20, rue du jouet, Strasbourg', '0654858532', 'pre2.nom2@boitemail.fr'),
 (3,'monsieur', 'conseiller', '14 bd saint georges, Paris', '0755556937', 'pre3.nom3@boitemail.fr'),
