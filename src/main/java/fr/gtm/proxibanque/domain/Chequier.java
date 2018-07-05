@@ -14,9 +14,16 @@ public class Chequier {
 	private LocalDate dateEnvoi;
 	private LocalDate dateReception;
 
+
 	public Chequier() {
 		super();
 	}
+
+	
+
+
+
+
 
 	/**
 	 * Constructeur Chequier.

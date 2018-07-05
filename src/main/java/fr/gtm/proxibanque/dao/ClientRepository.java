@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 import fr.gtm.proxibanque.domain.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Integer>{
-
+	
+	
+	 public Client findByPrenom(String prenom);
 	 
+	 public Client findByNom(String nom);
 }

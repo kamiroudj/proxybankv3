@@ -16,31 +16,6 @@ INSERT INTO `client` (`id`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VA
 (7,'Roussel', 'Sylvain', '4 rue de la glacière,75014 Paris', '0616657835', 'pre7.nom7@boitemail.fr');
 
 
-
--- ---------------------------------------------------------------------
-
---
--- Déchargement des données de la table `client`
---
-
-INSERT INTO `client` (`id`) VALUES
-(1),
-(4),
-(6),
-(7);
-
--- --------------------------------------------------------
-
---
--- Déchargement des données de la table `conseiller`
---
-
-INSERT INTO `conseiller` (`id`, `login`, `password`) VALUES
-(2, 'jvanher', 'mdp'),
-(3, 'conseiller', 'secret'),
-(5, 'jodudu', 'hello');
-
-
 -- --------------------------------------------------------
 --
 -- Déchargement des données de la table `comptes`
@@ -69,16 +44,6 @@ INSERT INTO `compte_client` (`idClient`, `idCompte`) VALUES
 (6, 5),
 (7, 6);
 
--- --------------------------------------------------------
 
---
--- Déchargement des données de la table `conseiller_clients`
---
-
-INSERT INTO `client_conseiller` (`idConseiller`, `idClient`) VALUES
-(2, 1),
-(2, 4),
-(2, 6),
-(3, 7);
 
 -- --------------------------------------------------------

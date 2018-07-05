@@ -8,6 +8,7 @@ package fr.gtm.proxibanque.domain;
 import java.time.LocalDate;
 import java.util.List;
 
+
 public class Client {
 
 	private Integer id;
@@ -18,9 +19,14 @@ public class Client {
 	private Adresse adresse;
 	private List<Compte> comptes;
 
+
+
 	public Client() {
 		super();
 	}
+
+
+
 
 	/**
 	 * Constructeur Client.
@@ -56,6 +62,11 @@ public class Client {
 		this.id = id;
 	}
 
+
+
+	
+
+
 	public Integer getNumClient() {
 		return numClient;
 	}
@@ -63,6 +74,9 @@ public class Client {
 	public void setNumClient(Integer numClient) {
 		this.numClient = numClient;
 	}
+
+
+
 
 	public String getNom() {
 		return nom;

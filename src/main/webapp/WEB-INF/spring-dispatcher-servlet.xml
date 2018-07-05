@@ -33,6 +33,10 @@
 		class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />	
 	</bean>
+	<!-- bean searchComponent -->
+	<bean id="searchComponent"
+		class="fr.gtm.proxibanque.business.SearchComponent">
+	</bean>
 	
 	
 </beans>

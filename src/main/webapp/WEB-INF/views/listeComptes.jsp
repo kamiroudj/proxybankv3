@@ -1,5 +1,5 @@
 <%@ include file="head.jsp"%>
-<%@ include file="header.jsp"%>
+
 
 <div class="row my-4">
             <div class="col-10 mx-auto">
@@ -44,4 +44,3 @@
             </div>
         </div>
 
-<%@ include file="header.jsp"%>

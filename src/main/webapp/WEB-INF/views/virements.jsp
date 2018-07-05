@@ -1,4 +1,4 @@
-<%@include file="header.jsp"%>
+
 
 <div class="container"
 	style="position: relative; top: 5em; background-color: null">
