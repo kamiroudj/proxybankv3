@@ -1,6 +1,8 @@
 package fr.gtm.proxibanque.domain;
 
 public class Adresse {
+	
+	private Integer id;
 	private String codePostal;
 	private String ville;
 	private String pays;
@@ -9,7 +11,6 @@ public class Adresse {
 
 	public Adresse() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Adresse(String codePostal, String ville, String pays, String lignePrincipale, String ligneSecondaire) {
@@ -19,6 +20,15 @@ public class Adresse {
 		this.pays = pays;
 		this.lignePrincipale = lignePrincipale;
 		this.ligneSecondaire = ligneSecondaire;
+	}
+
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getCodePostal() {

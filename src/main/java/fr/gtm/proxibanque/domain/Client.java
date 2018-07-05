@@ -8,7 +8,8 @@ import java.util.List;
 
 public class Client  {
 	
-	private Integer id; 
+	private Integer id;
+	private Integer numClient;
 	private String nom; 
 	private String prenom; 
 	private LocalDate dateNaissance; 
@@ -21,7 +22,7 @@ public class Client  {
 	}
 
 
-	public Client(String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
+	public Client(Integer numClient, String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -37,6 +38,17 @@ public class Client  {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	
+
+	public Integer getNumClient() {
+		return numClient;
+	}
+
+
+	public void setNumClient(Integer numClient) {
+		this.numClient = numClient;
 	}
 
 
