@@ -10,7 +10,5 @@ import fr.gtm.proxibanque.domain.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Integer>{
 
-	@Query("select c from Client as c where c.conseiller.id =:idC")
-	List<Client> findAllClientsConseiller(@Param("idC") Integer idConseiller);
 	 
 }

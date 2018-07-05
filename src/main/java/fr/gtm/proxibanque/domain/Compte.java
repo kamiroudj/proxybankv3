@@ -1,63 +1,86 @@
 package fr.gtm.proxibanque.domain;
 /**
- * 
- * @author Adminl
- * classe Compte possède un solde ainsi qu'un identifiant unique "numeroCompte" un compte est associé à un client
- *
+ * Compte est la classe représentant un compte bancaire chez Proxibanque 
+ * @author Mohammed, Kamir et Arnauld
+ * @version 3.0
  */
+import java.time.LocalDate;
+
 public class Compte {
-	
-	private Double solde;
 	private Integer id;
-	private Client client;
-	
+	private Integer numCompte;
+	private LocalDate dateOuverture;
+	private Double solde;
+	private String libelle;
+	private Chequier chequier;
+	private CarteBleue carteBleue;
 
 	public Compte() {
-		
+		super();
 	}
 
-/**
- * 
- * @param solde contenu du compte, paramètre utilisé lors des opérations type virement.
- * @param numeroCompte identifiant unique permettant l'indexation du compte sans erreur.
- */
-	public Compte(Double solde, Integer id) {
-		
+	public Compte(Integer numCompte, LocalDate dateOuverture, Double solde, String libelle) {
+		super();
+		this.numCompte = numCompte;
+		this.dateOuverture = dateOuverture;
 		this.solde = solde;
-		this.id = id;
+		this.libelle = libelle;
 	}
-
-
-	public Double getSolde() {
-		return solde;
-	}
-
-
-	public void setSolde(Double solde) {
-		this.solde = solde;
-	}
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Client getClient() {
-		return client;
+	public Integer getNumCompte() {
+		return numCompte;
 	}
 
-	public void setClient(Client client) {
-		this.client = client;
+	public void setNumCompte(Integer numCompte) {
+		this.numCompte = numCompte;
 	}
-	
-	
-	
-		
-	
+
+	public String getLibelle() {
+		return TypeCompte.valueOf(libelle).name();
+	}
+
+	public void setType(TypeCompte type) {
+		this.libelle = type.name();
+	}
+
+	public LocalDate getDateOuverture() {
+		return dateOuverture;
+	}
+
+	public void setDateOuverture(LocalDate dateOuverture) {
+		this.dateOuverture = dateOuverture;
+	}
+
+	public Double getSolde() {
+		return solde;
+	}
+
+	public void setSolde(Double solde) {
+		this.solde = solde;
+	}
+
+	public Chequier getChequier() {
+		return chequier;
+	}
+
+	public void setChequier(Chequier chequier) {
+		this.chequier = chequier;
+	}
+
+	public CarteBleue getCarteBleue() {
+		return carteBleue;
+	}
+
+	public void setCarteBleue(CarteBleue carteBleue) {
+		this.carteBleue = carteBleue;
+	}
 
 }

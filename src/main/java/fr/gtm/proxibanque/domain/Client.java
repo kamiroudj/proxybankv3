@@ -1,57 +1,99 @@
 package fr.gtm.proxibanque.domain;
-
-import java.util.ArrayList;
-import java.util.List;
 /**
- * 
- * @author ElSisi-Ussunet
- * Classe client hérite de 'Personne' identifié par un nom, prenom, adresse, tel, email chaque client a une liste de comptes.
- *
+ * Client est la classe représentant un client de la banque Broxybanque.
+ * @author 
  */
-public class Client extends Personne {
+import java.time.LocalDate;
+import java.util.List;
+
+public class Client  {
 	
-	private List<Compte> comptes = new ArrayList<Compte>();
-	private Conseiller conseiller;
+	private Integer id; 
+	private String nom; 
+	private String prenom; 
+	private LocalDate dateNaissance; 
+	private Adresse adresse;
+	private List<Client> clients; 
 	
-	
-	/***************** constructeur *******************************************/
 	
 	public Client() {
 		super();
-	}
-
-	
-	/*********************** getters et setters *******************************/
-	
-	public Client(String nom, String prenom, String adresse, String telephone, String email) {
-		super(nom, prenom, adresse, telephone, email);
+		// TODO Auto-generated constructor stub
 	}
 
 
-	public List<Compte> getComptes() {
-		return comptes;
+	public Client(Integer id, String nom, String prenom, LocalDate dateNaissance, Adresse adresse,
+			List<Client> clients) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.clients = clients;
 	}
 
 
-	public void setComptes(List<Compte> comptes) {
-		this.comptes = comptes;
+	public Integer getId() {
+		return id;
 	}
 
 
-	public Conseiller getConseiller() {
-		return conseiller;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 
-	public void setConseiller(Conseiller conseiller) {
-		this.conseiller = conseiller;
+	public String getNom() {
+		return nom;
 	}
-	
-	
 
-	
-	
-	
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+	public LocalDate getDateNaissance() {
+		return dateNaissance;
+	}
+
+
+	public void setDateNaissance(LocalDate dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+
+	public List<Client> getClients() {
+		return clients;
+	}
+
+
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
+
+
 	
 	
 }

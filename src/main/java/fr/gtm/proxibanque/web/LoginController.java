@@ -8,14 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import fr.gtm.proxibanque.business.LoginService;
+import fr.gtm.proxibanque.business.AuthentificationService;
 import fr.gtm.proxibanque.domain.Conseiller;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
-	LoginService service;
+	AuthentificationService service;
 	
 	@RequestMapping("/auth")
 	public String selogger() {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import fr.gtm.proxibanque.business.ConseillerService;
+import fr.gtm.proxibanque.business.OperationsBancairesService;
 import fr.gtm.proxibanque.domain.Client;
 import fr.gtm.proxibanque.domain.Conseiller;
 
@@ -19,7 +19,7 @@ public class ListClientController {
 	
 	
 	@Autowired
-	private ConseillerService service;
+	private OperationsBancairesService service;
 	
 	@RequestMapping("/listClient")
 	public String listeClients(HttpSession session, Model model) {
@@ -27,8 +27,8 @@ public class ListClientController {
 		List<Client> clients;
 		Conseiller conseiller= (Conseiller)(session.getAttribute("conseiller"));
 		Integer idConseiller = conseiller.getId();
-		clients = service.findClients(idConseiller);
-		model.addAttribute("clients", clients);
+		//clients = service.findClients(idConseiller);
+		//model.addAttribute("clients", clients);
 		return "listeClients";
 		
 	}
