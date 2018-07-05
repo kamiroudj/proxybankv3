@@ -26,9 +26,7 @@ public class ListClientController {
 		
 		List<Client> clients;
 		Conseiller conseiller= (Conseiller)(session.getAttribute("conseiller"));
-		int idConseiller = conseiller.getId();
-		
-		//System.out.println("idConseiller "+idconseiller);
+		Integer idConseiller = conseiller.getId();
 		clients = service.findClients(idConseiller);
 		model.addAttribute("clients", clients);
 		return "listeClients";
