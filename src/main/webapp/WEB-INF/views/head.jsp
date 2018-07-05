@@ -22,5 +22,5 @@
 <body>
     <div class="container-fluid">
         <div class="fixed-top my-4 text-center">
-            <img src="img/proxybank.png" alt="" class="img-fluid mid-logo">
+            <img src="<c:url value='/img/proxybank.png'/>" alt="" class="img-fluid mid-logo">
         </div>

@@ -9,36 +9,35 @@
                             <th scope="col">N°Compte</th>
                             <th scope="col">Libellé</th>
                             <th scope="col">Date d'ouverture</th>
-                            <th scope="col">CB</th>
-                            <th scope="col">Chéquier</th>
+                            <th scope="col">Solde</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="compte" items="${comptes}">
                             <tr>
-                                <th scope="row">${compte.numeroCompte}</th>
-                                <td>${compte.getClass().getSimpleName()}</td>
+                                <th scope="row">${compte.numCompte}</th>
+                                <td>${compte.libelle}</td>
+                                <td>${compte.dateOuverture}</td>
                                 <td>${compte.solde}</td>
-                                <!-- A REVOIR -->
-                                <c:choose>
+                                <!--<c:choose>
                                     <c:when test="${compte.getClass().getSimpleName() == 'CompteCourant'}">
                                         <td>${compte.CB}</td>
                                     </c:when>
                                     <c:otherwise>
                                         <td>--</td>
                                     </c:otherwise>
-                                </c:choose>
+                                </c:choose>-->
 
-                                <c:choose>
+                                <!--<c:choose>
                                     <c:when test="${compte.getClass().getSimpleName() == 'CompteEpargne'}">
                                         <td>${compte.chequier}</td>
                                     </c:when>
                                     <c:otherwise>
                                         <td>--</td>
                                     </c:otherwise>
-                                </c:choose>
+                                </c:choose>-->
                                 <!-- FIN A REVOIR -->
-                            </tr>
+                           </tr>
                         </c:forEach>
                     </tbody>
                 </table>
@@ -47,11 +46,11 @@
             <div class="col-md-4">
                 <div class="list-group">
                     <h2 class="list-group-item bg-bank-light text-white">SERVICES</h2>
-                    <a class="list-group-item waves-effect" href="#">Virement</a>
-                    <a class="list-group-item waves-effect" href="<c:url value='/retraits/liquide.html'/>" >Retirer de l'argent</a>
-                    <a class="list-group-item waves-effect" href="#">Retrait CB</a>
-                    <a class="list-group-item waves-effect" href="#">Retrait Chequier</a>
-                    <a class="list-group-item waves-effect" href="#">Se dÃ©connecter</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/virement.html?id='/>${idClient}">Virement</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/retraits/liquide.html?id='/>${idClient}" >Retirer de l'argent</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/retraits/carte.html?id='/>${idClient}">Retrait CB</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/retraits/chequier.html?id='/>${idClient}">Retrait Chequier</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/logout.html?id='/>${idClient}" >Se déconnecter</a>
                 </div>
             </div>
         </div>

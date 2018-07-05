@@ -63,8 +63,8 @@ public class Compte {
 		return TypeCompte.valueOf(this.libelle).name();
 	}
 
-	public void setLibelle(TypeCompte type) {
-		this.libelle = type.name();
+	public void setLibelle(String type) {
+		this.libelle = TypeCompte.valueOf(type).name();
 	}
 
 	public LocalDate getDateOuverture() {
