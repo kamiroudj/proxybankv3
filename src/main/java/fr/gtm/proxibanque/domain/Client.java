@@ -9,20 +9,23 @@ import java.time.LocalDate;
 import java.util.List;
 
 
-public class Client  {
-	
+public class Client {
+
 	private Integer id;
 	private Integer numClient;
-	private String nom; 
-	private String prenom; 
-	private LocalDate dateNaissance; 
+	private String nom;
+	private String prenom;
+	private LocalDate dateNaissance;
 	private Adresse adresse;
-	private List<Compte> comptes; 
-	
-	
+	private List<Compte> comptes;
+
+
+
 	public Client() {
 		super();
 	}
+
+
 
 
 	/**
@@ -60,16 +63,18 @@ public class Client  {
 	}
 
 
+
 	
+
 
 	public Integer getNumClient() {
 		return numClient;
 	}
 
-
 	public void setNumClient(Integer numClient) {
 		this.numClient = numClient;
 	}
+
 
 
 
@@ -109,7 +114,6 @@ public class Client  {
 	public List<Compte> getComptes() {
 		return comptes;
 	}
-
 
 	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;

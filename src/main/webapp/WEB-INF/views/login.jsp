@@ -17,5 +17,4 @@
         </div>	
 	<!-- /fin de CONNEXION-->
 	
-	
 <%@ include file="footer.jsp"%>	
