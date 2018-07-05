@@ -7,6 +7,7 @@ package fr.gtm.proxibanque.domain;
 import java.time.LocalDate;
 
 public class Compte {
+	
 	private Integer id;
 	private Integer numCompte;
 	private LocalDate dateOuverture;
@@ -14,6 +15,7 @@ public class Compte {
 	private String libelle;
 	private Chequier chequier;
 	private CarteBleue carteBleue;
+	private Client client;
 
 	public Compte() {
 		super();
@@ -44,10 +46,10 @@ public class Compte {
 	}
 
 	public String getLibelle() {
-		return TypeCompte.valueOf(libelle).name();
+		return TypeCompte.valueOf(this.libelle).name();
 	}
 
-	public void setType(TypeCompte type) {
+	public void setLibelle(TypeCompte type) {
 		this.libelle = type.name();
 	}
 
@@ -82,5 +84,15 @@ public class Compte {
 	public void setCarteBleue(CarteBleue carteBleue) {
 		this.carteBleue = carteBleue;
 	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	
 
 }

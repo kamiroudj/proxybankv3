@@ -13,24 +13,20 @@ public class Client  {
 	private String prenom; 
 	private LocalDate dateNaissance; 
 	private Adresse adresse;
-	private List<Client> clients; 
+	private List<Compte> comptes; 
 	
 	
 	public Client() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
-	public Client(Integer id, String nom, String prenom, LocalDate dateNaissance, Adresse adresse,
-			List<Client> clients) {
+	public Client(String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
 		super();
-		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
-		this.clients = clients;
 	}
 
 
@@ -84,13 +80,13 @@ public class Client  {
 	}
 
 
-	public List<Client> getClients() {
-		return clients;
+	public List<Compte> getComptes() {
+		return comptes;
 	}
 
 
-	public void setClients(List<Client> clients) {
-		this.clients = clients;
+	public void setComptes(List<Compte> comptes) {
+		this.comptes = comptes;
 	}
 
 

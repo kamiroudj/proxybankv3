@@ -2,6 +2,7 @@ package fr.gtm.proxibanque.web;
 
 
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import fr.gtm.proxibanque.business.AuthentificationService;
-import fr.gtm.proxibanque.domain.Conseiller;
+
 
 @Controller
 public class LoginController {
@@ -30,7 +31,7 @@ public class LoginController {
 			@RequestParam("password") String password,
 			Model model) {
 		
-		Conseiller conseiller = new Conseiller(login, password);
+		/*Conseiller conseiller = new Conseiller(login, password);
 				
 		try {
 			conseiller = service.verifierLoginPassword(login, password);
@@ -41,9 +42,11 @@ public class LoginController {
 			session.setAttribute("conseiller",  null);
 			model.addAttribute("erreur", erreur);
 			return this.selogger();
-		}
+		}*/
+		
+		return null;
 	}
 	
-	
+
 
 }
