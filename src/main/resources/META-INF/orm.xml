@@ -8,28 +8,6 @@
 	xmlns="http://java.sun.com/xml/ns/persistence/orm"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
-
-	<entity class="fr.gtm.proxibanque.domain.Personne">	
-	<inheritance strategy="JOINED"/>
-		<attributes>
-			<id name="id">
-				<generated-value strategy="IDENTITY" />
-			</id>
-			<basic name="nom" />
-			<basic name="prenom" />
-			<basic name="adresse" />
-			<basic name="telephone" />
-			<basic name="email" />
-		</attributes>
-	</entity>
-	
-	<entity class="fr.gtm.proxibanque.domain.Conseiller">
-		<attributes>
-			<basic name="login" />
-			<basic name="password" />			
-			<one-to-many name="clients" mapped-by="conseiller" />				
-		</attributes>
-	</entity>
 	
 	<entity class="fr.gtm.proxibanque.domain.Client">
 	
@@ -58,18 +36,6 @@
 			<inverse-join-column name="idClient"/>
 			</join-table>	
 			</many-to-one>
-		</attributes>
-	</entity>
-	
-		<entity class="fr.gtm.proxibanque.domain.CompteCourant">
-		<attributes>
-			<basic name="decouvert" />
-		</attributes>
-	</entity>
-	
-	<entity class="fr.gtm.proxibanque.domain.CompteEpargne">
-		<attributes>
-			<basic name="taux" />
 		</attributes>
 	</entity>
 	
