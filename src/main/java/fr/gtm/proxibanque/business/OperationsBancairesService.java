@@ -14,7 +14,7 @@ import fr.gtm.proxibanque.domain.CompteCourant;
 
 
 @Service
-public class ConseillerService {
+public class OperationsBancairesService {
 	
 	@Autowired
 	private ClientRepository daocl;
@@ -23,45 +23,23 @@ public class ConseillerService {
 	private CompteRepository daocp;
 
 
-	public List<Client> findClients(Integer idConseiller) {
+	public void retraitLiquide(Compte compte, Double montant) {
 		
-		return daocl.findAllClientsConseiller(idConseiller);
 				
 	}
 
 
-	public Client findClientById(Integer id) {		
-		//return daocl.findById(id);
-		return daocl.findById(id).get();
+
+	public void retraitCarte(Compte compte, String type) {
+
 	}
 
 
-	public void updateClient(Client client) {
-	
-		daocl.save(client);
-	}
-
-
-	public List<Compte> findComptesClient(Integer idClient) {
-		
-		return daocp.findAllComptesClient(idClient);
-		//return null;
-	}
-
-
-	public List<Compte> findComptes() {
-		
-		return daocp.findAll();
-	}
-	
-
-
-	public void effectuerVirement(int compDeb, int compCre, double montant) throws SoldeException {
+	public void virement(Integer idCompteDebit, Integer idCompteCredit, Double montant) throws SoldeException {
 		
 		Compte compteDebit = null;
 		Compte compteCredit = null;
-		//Compte compteDebit = daocp.findById(compDeb); //à modifier
-		
+		//Compte compteDebit = daocp.findById(compDeb); //à modifier		
 		//Compte compteCredit = daocp.findById(compCre); //à modifier
 		
 		if (compteDebit instanceof CompteCourant) {
@@ -76,8 +54,8 @@ public class ConseillerService {
 			compteCredit.setSolde(compteCredit.getSolde() + montant);
 			daocp.save(compteDebit);
 			daocp.save(compteCredit);		
-	}
-		
+		}
+
 	}	
 	
 

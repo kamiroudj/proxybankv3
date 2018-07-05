@@ -7,23 +7,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import fr.gtm.proxibanque.business.ConseillerService;
+import fr.gtm.proxibanque.business.OperationsBancairesService;
 import fr.gtm.proxibanque.domain.Compte;
 
 @Controller
 public class ListCompteController {
 	
 	@Autowired
-	private ConseillerService service;
+	private OperationsBancairesService service;
 	
 	
 	@RequestMapping("/listComptes")
 	public String listeComptes(HttpSession session, Model model, @RequestParam Integer idClient) {
 		
 		System.out.println("idClient  "+idClient);
-		
-		List<Compte> comptes = service.findComptesClient(idClient);
-		
+		List<Compte> comptes = null;
+		//List<Compte> comptes = service.findComptesClient(idClient);		
 		model.addAttribute("comptes", comptes);
 		return "listeComptes";
 		
