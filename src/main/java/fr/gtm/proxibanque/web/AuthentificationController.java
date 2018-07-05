@@ -31,7 +31,7 @@ public class AuthentificationController {
 	public String chercher(@RequestParam String search) throws LoginException {
 		String result = null;
 		
-		if(this.service.chercher(search)==2) {
+		if(this.service.search(search)!=null) {
 			//NOM ou/et PRENOM ok
 			
 			//renvoie la jsp date avec l'id de la recherche
