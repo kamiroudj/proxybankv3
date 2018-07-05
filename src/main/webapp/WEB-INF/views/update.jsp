@@ -1,4 +1,4 @@
-<%@include file="header.jsp" %>
+
 
 <div class=content >      
         <form method="post" id="authentification" action="<c:url value="/updateClient" />">

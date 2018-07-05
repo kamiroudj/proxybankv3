@@ -1,7 +1,5 @@
 <%@ include file="head.jsp"%>
 
-<body>
-	<div class="container-fluid">
 	<!-- div de CONNEXION -->
 	<div class="fixed-top my-4 text-center">
             <img src="img/proxybank.png" alt="" class="img-fluid mid-logo">
@@ -12,7 +10,7 @@
                 <h2>Bienvenue, pour commencer :</h2>
                 <form action="" method="post">
                     <div class="md-form active-pink active-pink-2 mb-3">
-                        <input class="form-control" type="text" name="recherche" placeholder="Veuillez saisir votre nom ou prénom" aria-label="Search">
+                        <input class="form-control" type="text" name="search" placeholder="Veuillez saisir votre nom ou prénom" aria-label="Search">
                     </div>
                 </form>
             </div>

@@ -21,10 +21,6 @@ public class AuthentificationService {
 	
 	private Integer id;
 
-
-	/*public Conseiller verifierLoginPassword(String login, String password) throws LoginException {
->>>>>>> a1fbc038db14de182674a0ec2e54e2a2feb78ec2
-
 	/**
 	 * Méthode permerttant de retrouver les utilisateurs correspondants à la saisie
 	 * du nom ou du prenom de l'utilisateur.
@@ -37,9 +33,11 @@ public class AuthentificationService {
 		
 		Integer searchId = null;
 		
-		//j'envoie le String de saisie à me composant
+		//j'envoie le String de saisie à mon composant
 		
-		//
+		//si je reçois un id depuis le component
+		
+		//si le component renvoi message d'erreur
 		
 		
 		
