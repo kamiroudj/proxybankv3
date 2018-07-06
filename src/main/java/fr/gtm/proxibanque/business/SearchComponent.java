@@ -67,19 +67,39 @@ public class SearchComponent {
 	}
 
 
-
+	/**
+	 * Méthode permettant de chercher un prenom ou un nom ou une association prenom nom
+	 * à partir d'une saisie et de stocker les clients récupérés par cette requête.
+	 * 
+	 * Renvoi null si on a un resultat rien ou l'id de componentSearch.
+	 * 
+	 * 
+	 * @param saisie
+	 * @return String
+	 */
 	public Integer search(String saisie) {
 		Boolean result = false;
 		LOGGER.debug("COMPONENT : Bien reçu "+saisie);
 		// TODO test sur le contains de l'espace et ajout requete prenomAndNom
-		String[] arraySearch = saisie.split(" ");
 		
-		//verification de la première partie de la saisie
-		for(Integer i=0; i<arraySearch.length; i++) {
-			if(this.dao.findByPrenomOrNom(arraySearch[i], arraySearch[i]) !=null){
-				LOGGER.debug("COMPONENT : j'ai trouvé un client champs "+i);
-				foundClient.add(this.dao.findByPrenomOrNom(arraySearch[i], arraySearch[i]));
-				result = true;
+		if(saisie.contains(" ")) {
+			LOGGER.debug("COMPONENT : La saisie comprend un espace ");
+			String[] arraySearch = saisie.split(" ");
+			LOGGER.debug("COMPONENT : array1search : "+arraySearch[0]);
+			LOGGER.debug("COMPONENT : array1search : "+arraySearch[1]);
+			LOGGER.debug("COMPONENT : resultat : "+this.dao.findByPrenomAndNom(arraySearch[0], arraySearch[1]).getNom());
+			//verification de la première partie de la saisie
+				if(this.dao.findByPrenomAndNom(arraySearch[0], arraySearch[1]) !=null){
+					LOGGER.debug("COMPONENT : j'ai trouvé un client");
+					foundClient.add(this.dao.findByPrenomAndNom(arraySearch[0], arraySearch[1]));
+					result = true;
+			}
+		}else {
+			if(this.dao.findByPrenomOrNom(saisie, saisie) !=null){
+			LOGGER.debug("COMPONENT : La saisie comprend PAS d'espace ");
+			foundClient.add(this.dao.findByPrenomOrNom(saisie, saisie));
+			LOGGER.debug("COMPONENT : J'ai inséré le client " + this.dao.findByPrenomOrNom(saisie, saisie).getNom());
+			result= true;
 			}
 		}
 		

@@ -32,6 +32,7 @@
                     </div>
                 </div>
             </div>
+            <%@ include file="action-user.jsp"%> 
         </div>
 <%@ include file="footer.jsp"%>
   
