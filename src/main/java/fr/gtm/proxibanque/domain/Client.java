@@ -2,12 +2,12 @@ package fr.gtm.proxibanque.domain;
 
 /**
  * Client est la classe représentant un client de la banque Broxybanque.
+
  * @author Mohammed, Kamir et Arnauld.
  * @version 3.0.
  */
 import java.time.LocalDate;
 import java.util.List;
-
 
 public class Client {
 
@@ -19,14 +19,9 @@ public class Client {
 	private Adresse adresse;
 	private List<Compte> comptes;
 
-
-
 	public Client() {
 		super();
 	}
-
-
-
 
 	/**
 	 * Constructeur Client.
@@ -62,11 +57,6 @@ public class Client {
 		this.id = id;
 	}
 
-
-
-	
-
-
 	public Integer getNumClient() {
 		return numClient;
 	}
@@ -74,9 +64,6 @@ public class Client {
 	public void setNumClient(Integer numClient) {
 		this.numClient = numClient;
 	}
-
-
-
 
 	public String getNom() {
 		return nom;
@@ -109,7 +96,6 @@ public class Client {
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
-
 
 	public List<Compte> getComptes() {
 		return comptes;

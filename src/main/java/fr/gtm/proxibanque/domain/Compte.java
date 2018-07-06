@@ -9,7 +9,7 @@ package fr.gtm.proxibanque.domain;
 import java.time.LocalDate;
 
 public class Compte {
-	
+
 	private Integer id;
 	private Long numCompte;
 	private LocalDate dateOuverture;
@@ -106,7 +106,5 @@ public class Compte {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
-	
 
 }
