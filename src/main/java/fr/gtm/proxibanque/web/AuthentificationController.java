@@ -43,9 +43,7 @@ public class AuthentificationController {
 		
 		if(this.service.search(search)!=null) {
 			LOGGER.debug("----------CONTROLLER Search okok ----------- ");
-			/*mav.addObject("id", this.service.search(search));
-			mav.addObject("saisie", search);
-			mav.setViewName("verif-date");*/
+
 			model.addAttribute("id", this.service.search(search));
 			model.addAttribute("saisie", search);
 			
@@ -80,7 +78,7 @@ public class AuthentificationController {
 			LOGGER.debug("-------------CONTROLLER verifDate okok-------------- ");
 			//je passe au dashboard l'id du client trouvé
 			model.addAttribute("idClient", this.service.verifierDate(date, id));
-			result = "redirect:/dashboard-compte.html";
+			result = "redirect:/dashboard.html";
 		}else {
 			result = "erreur-conseiller";
 		}
