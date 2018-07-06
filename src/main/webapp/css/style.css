@@ -6,7 +6,15 @@ div#connexion{
 }
 
 .mid-logo{
-    height: 80px;
+    height: 120px;
+}
+
+.text-bank{
+    color: rgba(17,30,108,1.0);
+}
+
+.text-bank-light{
+    color: #179bd7;
 }
 
 .bg-bank{
@@ -16,6 +24,8 @@ div#connexion{
 .bg-bank-light{
     background-color: #179bd7;
 }
+
+
 
 /* ECRAN 2 LISTE CLIENTS */
 .perso-pill{
