@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+/**
+ * Controller qui gère les vues d'authentification en deux etapes par nom et/ou prenom puis par date de naissance
+ * 
+ */
+>>>>>>> 7e64116a5d4deea17cbce038013be2bd691e7bb9
 package fr.gtm.proxibanque.web;
 /**
  * RetraitController est la classe représentant la vue de l'autentification des clients.
@@ -16,6 +23,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 import fr.gtm.proxibanque.business.AuthentificationService;
 
