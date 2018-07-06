@@ -50,7 +50,7 @@
                     <a class="list-group-item waves-effect" href="<c:url value='/retraits/liquide.html?id='/>${idClient}" >Retirer de l'argent</a>
                     <a class="list-group-item waves-effect" href="<c:url value='/retraits/carte.html?id='/>${idClient}">Retrait CB</a>
                     <a class="list-group-item waves-effect" href="<c:url value='/retraits/chequier.html?id='/>${idClient}">Retrait Chequier</a>
-                    <a class="list-group-item waves-effect" href="<c:url value='/logout.html?id='/>${idClient}" >Se déconnecter</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/'/>" >Se déconnecter</a>
                 </div>
             </div>
         </div>

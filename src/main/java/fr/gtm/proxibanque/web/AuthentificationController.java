@@ -1,5 +1,6 @@
 /**
- * Controller qui gère les vues d'authentification en deux etapes par nom et/ou prenom
+ * Controller qui gère les vues d'authentification en deux etapes par nom et/ou prenom puis par date de naissance
+ * 
  */
 package fr.gtm.proxibanque.web;
 
@@ -14,7 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import fr.gtm.proxibanque.business.AuthentificationService;
 import fr.gtm.proxibanque.business.LoginException;
