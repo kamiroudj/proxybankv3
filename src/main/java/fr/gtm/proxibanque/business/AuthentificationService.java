@@ -39,8 +39,8 @@ public class AuthentificationService {
 	 * L'id retournée permet de retrouver le component et les resultats de recherche
 	 * stocké à l'intérieur.
 	 * 
-	 * @param saisie
-	 * @return
+	 * @param saisie La saisie de l'utilisateur.
+	 * @return L'id recherché.
 	 * @throws LoginException
 	 */
 	public Integer search(String saisie) {
@@ -71,9 +71,9 @@ public class AuthentificationService {
 	 * (verif-date.jsp) correspond à celle de l'un des clients trouvé et stocké par
 	 * le componentSearch lors de la première étape (login.jsp).
 	 * 
-	 * @param date
-	 * @param id
-	 * @return
+	 * @param date La date de naissance.
+	 * @param id L'id du client.
+	 * @return L'id du client.
 	 */
 	public Integer verifierDate(LocalDate date, Integer id) {
 		Integer idClient = null;

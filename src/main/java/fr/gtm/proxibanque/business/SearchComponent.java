@@ -58,7 +58,7 @@ public class SearchComponent {
 	 * Renvoi null si on a un resultat rien ou l'id de componentSearch.
 	 * 
 	 * 
-	 * @param saisie
+	 * @param saisie La saisie 
 	 * @return Integer
 	 */
 	public Integer search(String saisie) {

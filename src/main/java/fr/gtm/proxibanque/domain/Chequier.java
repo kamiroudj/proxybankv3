@@ -22,8 +22,6 @@ public class Chequier {
 	/**
 	 * Constructeur Chequier.
 	 * 
-	 * @param id
-	 *            C'est l'id unique du chequier.
 	 * @param dateEnvoi
 	 *            La date d'envoi du chéquier.
 	 * @param dateReception
