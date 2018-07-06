@@ -12,24 +12,19 @@ import org.springframework.web.servlet.ModelAndView;
 import fr.gtm.proxibanque.business.OperationsBancairesService;
 import fr.gtm.proxibanque.domain.Compte;
 
-
-
 @Controller
 public class DashboardController {
 
 	@Autowired
-	private OperationsBancairesService service;	
-	
+	private OperationsBancairesService service;
+
 	@RequestMapping("/dashboard")
 	public String listeComptes(@RequestParam Integer idClient, Model model) {
 		List<Compte> comptes = service.findComptes(idClient);
 		model.addAttribute("comptes", comptes);
 		model.addAttribute("idClient", idClient);
 		return "dashboard-compte";
-		
+
 	}
-	
-	
-	
-	
+
 }

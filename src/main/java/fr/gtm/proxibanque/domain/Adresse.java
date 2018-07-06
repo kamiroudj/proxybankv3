@@ -8,7 +8,7 @@ package fr.gtm.proxibanque.domain;
  * @version 3.0.
  */
 public class Adresse {
-	
+
 	private Integer id;
 	private String codePostal;
 	private String ville;
@@ -45,7 +45,6 @@ public class Adresse {
 		this.ligneSecondaire = ligneSecondaire;
 	}
 
-	
 	public Integer getId() {
 		return id;
 	}
