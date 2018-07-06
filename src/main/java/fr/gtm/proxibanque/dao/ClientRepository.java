@@ -11,18 +11,18 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
 	/**
 	 * Recupère un client à partir de son Nom OU de son Prenom
 	 * 
-	 * @param prenom
-	 * @param nom
-	 * @return Client
+	 * @param prenom Le prénom du client.
+	 * @param nom Le nom du client.
+	 * @return Le client.
 	 */
 	public Client findByPrenomOrNom(String prenom, String nom);
 
 	/**
 	 * Recupère un client à partir de son Nom ET de son Prenom
 	 * 
-	 * @param prenom
-	 * @param nom
-	 * @return Client
+	 * @param prenom Le prénom
+	 * @param nom Le nom
+	 * @return Le client.
 	 */
 	public Client findByPrenomAndNom(String prenom, String nom);
 }

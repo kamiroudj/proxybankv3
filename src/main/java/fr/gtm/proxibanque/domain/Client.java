@@ -25,7 +25,7 @@ public class Client {
 
 	/**
 	 * Constructeur Client.
-	 * 
+	 * @param numClient Le numéro du client.
 	 * @param nom
 	 *            Le nom du client.
 	 * @param prenom
