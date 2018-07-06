@@ -12,6 +12,9 @@
                     <div class="md-form active-pink active-pink-2 mb-3">
                         <input class="form-control" type="text" name="search" placeholder="Veuillez saisir votre nom ou prénom" aria-label="Search">
                     </div>
+                    <div class="text-center mt-4">
+        				<button class="btn bg-bank-light" type="submit">Valider</button>
+    				</div>
                 </form>
             </div>
         </div>	

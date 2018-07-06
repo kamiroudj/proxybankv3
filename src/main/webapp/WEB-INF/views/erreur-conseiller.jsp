@@ -6,7 +6,7 @@
                     <div class="card-header bg-danger text-white"><h2>AUCUN RESULTAT</h2></div>
                     <div class="card-body text-danger">
                         <p class="card-text">Veuillez vous adresser à un conseiller</p>
-                        <a href="#" class="btn btn-success">Retour à l'accueil</a>
+                        <a href="<c:url value="/"/>" class="btn btn-success">Retour à l'accueil</a>
                     </div>
                 </div>
             </div>

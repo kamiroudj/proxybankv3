@@ -4,6 +4,8 @@
  */
 package fr.gtm.proxibanque.business;
 
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -12,6 +14,8 @@ import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+
+import fr.gtm.proxibanque.dao.ClientRepository;
 
 
 
@@ -23,58 +27,13 @@ public class AuthentificationService {
 	@Autowired
 	private ObjectFactory<SearchComponent> facto;
 	
+	@Autowired
+	private ClientRepository dao;
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
 	
-	private Integer searchId;	
-	
-	/**
-	 * @return the searchId
-	 */
-	public Integer getSearchId() {
-		return searchId;
-	}
-	/**
-	 * @param searchId the searchId to set
-	 */
-	public void setSearchId(Integer searchId) {
-		this.searchId = searchId;
-	}
-	private Map<Integer, SearchComponent> searchCompoCollec;
+	private Map<Integer, SearchComponent> searchCompoCollec = new HashMap<Integer, SearchComponent>();
 
-	/**
-	 * Méthode permerttant de retrouver les utilisateurs correspondants à la saisie
-	 * du nom ou du prenom de l'utilisateur.
-	 * 
-	 * @return Integer
-	 * @param String saisie
-	 *
-	 */
-	public Integer chercher(String saisie) throws LoginException {
-		
-		Integer searchId = null;
-		SearchComponent myCompo = this.facto.getObject();
-		//j'envoie le String de saisie à mon composant
-//		if(myCompo.search(saisie)==true) {
-//			searchId = 2;
-//		}
-		
-		//si je reçois un id depuis le component
-		
-		//si le component renvoi message d'erreur
-		
-		
-		return searchId;
-//		Conseiller conseiller = null;
-//		if (login != null && password != null) {
-//			// conseiller = dao.findByLogin(login);
-//		}
-//
-//		if ((conseiller == null) || !conseiller.getPassword().equals(password))
-//			throw new LoginException("Echec authentification Conseiller. Essayer à nouveau");
-//
-//		return conseiller;
-
-	}
 	
 	/**
 	 * Permet d'utiliser le component search pour et de récupérer l'id de ce component
@@ -88,15 +47,13 @@ public class AuthentificationService {
 		SearchComponent myCompo = this.facto.getObject();
 		
 		//COMPONENT OK
-		if(myCompo.search(saisie)!=null) {
+		if(myCompo.search(saisie)!=0) {
 	
 			searchId = myCompo.getsearchId();
-			//je stocke l'id du composant pour le passer au controller
-			this.setSearchId(searchId);
-			//TODO je mets le component dans la collection
-			//this.searchCompoCollec.put(myCompo.getsearchId(), myCompo);
 			
-			LOGGER.debug("SERVICE : search component à renvoyé  id :"+searchId.toString());
+			this.searchCompoCollec.put(searchId, myCompo);
+			
+			LOGGER.debug("SERVICE : search component à renvoyé  id :"+searchId.toString() + "et ma collection est " + searchCompoCollec.get(searchId));
 			
 		}else {
 			//COMPONENT PAS OK = rien 
@@ -107,6 +64,25 @@ public class AuthentificationService {
 		
 	}
 	
+	public Integer verifierDate(LocalDate date, Integer id) {
+		Integer idClient = null;
+		
+		LOGGER.debug("---------- Verifier date lancé et verifie la date "+date+" ----------");
+		SearchComponent savedSearch = searchCompoCollec.get(id);
+		
+		//récupérer les clients
+		for(Integer i = 0; i<savedSearch.getFoundClient().size();i++) {
+			LocalDate dateClient = savedSearch.getFoundClient().iterator().next().getDateNaissance();
+			LOGGER.debug("--------je parcours les clients et j'ai trouvé la date"+ dateClient);
+			if(date.equals(dateClient)) {
+				LOGGER.debug("--------date correspond je renvoi l'id----");
+				idClient = savedSearch.getFoundClient().iterator().next().getId();
+			}
+		}
+		
+		LOGGER.debug("SERVICE : valeur id client = "+idClient);
+		return idClient;
+	}
 
 }
 
