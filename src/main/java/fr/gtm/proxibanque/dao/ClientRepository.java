@@ -14,4 +14,5 @@ public interface ClientRepository extends JpaRepository<Client, Integer>{
 	
 	 public Client findByPrenomOrNom(String prenom, String nom);
 	 
+	 public Client findByPrenomAndNom(String prenom, String nom);
 }
