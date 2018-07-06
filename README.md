@@ -22,7 +22,7 @@
 
 # Exemple d'utilisation
 ### 1- Une fois l'application lancée, vous pouvez consulter des comptes :
-Lamine ou Lamine LOLO - Zidane ou Zidane ZOZO
+Lamine ou Lamine LOLO - Zidane ou Zidane ZOZO - Fabien ou Fabien FOFO - Steven ou Steven SOSO
 
 ### 2- Une fois connecté vous pouvez consulter le solde des différents comptes de ce client
 
