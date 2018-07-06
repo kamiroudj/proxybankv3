@@ -2,7 +2,7 @@
         <div class="row flex-center full-screen my-4">
             <!-- LISTES DES COMPTES -->
             <div class="col-md-6">
-                <h2 class="text-bank-light">GESTION DES CLIENTS</h2>
+                <h2 class="text-bank-light">GESTION DES COMPTES</h2>
                 <table class="table table-responsive w-auto">
                     <thead class="thead-light">
                         <tr>
@@ -19,24 +19,6 @@
                                 <td>${compte.libelle}</td>
                                 <td>${compte.dateOuverture}</td>
                                 <td>${compte.solde}</td>
-                                <!--<c:choose>
-                                    <c:when test="${compte.getClass().getSimpleName() == 'CompteCourant'}">
-                                        <td>${compte.CB}</td>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <td>--</td>
-                                    </c:otherwise>
-                                </c:choose>-->
-
-                                <!--<c:choose>
-                                    <c:when test="${compte.getClass().getSimpleName() == 'CompteEpargne'}">
-                                        <td>${compte.chequier}</td>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <td>--</td>
-                                    </c:otherwise>
-                                </c:choose>-->
-                                <!-- FIN A REVOIR -->
                            </tr>
                         </c:forEach>
                     </tbody>
@@ -50,7 +32,7 @@
                     <a class="list-group-item waves-effect" href="<c:url value='/retraits/liquide.html?id='/>${idClient}" >Retirer de l'argent</a>
                     <a class="list-group-item waves-effect" href="<c:url value='/retraits/carte.html?id='/>${idClient}">Retrait CB</a>
                     <a class="list-group-item waves-effect" href="<c:url value='/retraits/chequier.html?id='/>${idClient}">Retrait Chequier</a>
-                    <a class="list-group-item waves-effect" href="<c:url value='/logout.html?id='/>${idClient}" >Se déconnecter</a>
+                    <a class="list-group-item waves-effect" href="<c:url value='/login.html'/>" >Se déconnecter</a>
                 </div>
             </div>
         </div>

@@ -1,16 +1,14 @@
 package fr.gtm.proxibanque.business;
 
 import java.time.LocalDate;
+
 import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import fr.gtm.proxibanque.dao.ClientRepository;
 import fr.gtm.proxibanque.dao.CompteRepository;
-import fr.gtm.proxibanque.domain.Client;
 import fr.gtm.proxibanque.domain.Compte;
 import fr.gtm.proxibanque.domain.TypeCompte;
 
@@ -18,9 +16,6 @@ import fr.gtm.proxibanque.domain.TypeCompte;
 
 @Service
 public class OperationsBancairesService {
-	
-	@Autowired
-	private ClientRepository daocl;
 	
 	@Autowired
 	private CompteRepository daocp;
@@ -73,12 +68,9 @@ public class OperationsBancairesService {
 		if (cp.isPresent()) cpCB = cp.get();
 		LocalDate today = LocalDate.now();
 		if (cpCB.getLibelle().equals(TypeCompte.COMPTE_EPARGNE.name())) throw new CompteException("Vous ne pouvez pas retirer une carte pour un compte epargne");
-		if (cpCB.getCarteBleue() != null) {			
-			Period p = Period.between(cpCB.getCarteBleue().getDateExpiration(), today);			
+		if (cpCB.getCarteBleue() != null) {					
 			if(cpCB.getCarteBleue().getDateExpiration().isAfter(today)) throw new CompteException("Vous ne pouvez pas retirer une carte avant son expiration");
-		}
-		
-
+		}		
 	}
 
 

@@ -31,9 +31,8 @@ public class CarteBleue {
 	 * @param dateExpiration
 	 *            La date d'expiration de la carte bancaire.
 	 */
-	public CarteBleue(Integer id, Long numCarte, String type, LocalDate dateExpiration) {
+	public CarteBleue(Long numCarte, String type, LocalDate dateExpiration) {
 		super();
-		this.id = id;
 		this.numCarte = numCarte;
 		this.type = type;
 		this.dateExpiration = dateExpiration;
