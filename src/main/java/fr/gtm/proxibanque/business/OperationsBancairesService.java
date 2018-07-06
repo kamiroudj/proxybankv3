@@ -42,34 +42,31 @@ public class OperationsBancairesService {
 
 
 	
-	public void retraitChequier(Integer idCompte) throws CompteException {
-		
+	public void retraitChequier(Integer idCompte) throws CompteException {		
 		Optional<Compte> cp = daocp.findById(idCompte);
 		Compte cpCheque = null;	
 		if (cp.isPresent()) cpCheque = cp.get();
 		
 		LocalDate today = LocalDate.now();			
-		
 		if (cpCheque.getChequier() != null) {
+			LocalDate dateValide = cpCheque.getChequier().getDateReception();
 			Period p = Period.between(cpCheque.getChequier().getDateReception(), today);
 			if (p.toTotalMonths() < 3 && p.getDays() != 0) {
-				throw new CompteException("Vous ne pouvez pas retirer un chequier à moins de 3 mois");		
+				throw new CompteException("Impossible d’effectuer le retrait d’un nouveau chéquier pour ce compte avant le"+ dateValide);		
 			}
 		
-		}
-				
+		}				
 	}
 	
 	
-	public void retraitCarte(Integer idCompte, String type) throws CompteException {
-		
+	public void retraitCarte(Integer idCompte, String type) throws CompteException {		
 		Optional<Compte> cp = daocp.findById(idCompte);
 		Compte cpCB = null;	
 		if (cp.isPresent()) cpCB = cp.get();
 		LocalDate today = LocalDate.now();
 		if (cpCB.getLibelle().equals(TypeCompte.COMPTE_EPARGNE.name())) throw new CompteException("Vous ne pouvez pas retirer une carte pour un compte epargne");
 		if (cpCB.getCarteBleue() != null) {					
-			if(cpCB.getCarteBleue().getDateExpiration().isAfter(today)) throw new CompteException("Vous ne pouvez pas retirer une carte avant son expiration");
+			if(cpCB.getCarteBleue().getDateExpiration().isAfter(today)) throw new CompteException("Impossible d’effectuer le retrait, votre ancienne carte est encore valide");
 		}		
 	}
 
@@ -83,7 +80,7 @@ public class OperationsBancairesService {
 		Optional<Compte> cc = daocp.findById(idCompteCredit);
 		if (cd.isPresent()) compteDebit = cd.get();
 		if (cc.isPresent()) compteCredit = cc.get();
-		if (montant > 900 ) throw new CompteException("Vous ne pouvez pas retirer plus de 900 euros");	
+		if (montant > 900 ) throw new CompteException("Vous ne pouvez pas faire un virement de plus de 900 euros");	
 		if (montant > compteDebit.getSolde()) throw new CompteException("Solde insuffisant");
 		
 		compteDebit.setSolde(compteDebit.getSolde() -  montant);

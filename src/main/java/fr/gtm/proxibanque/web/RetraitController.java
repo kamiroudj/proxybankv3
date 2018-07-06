@@ -8,7 +8,6 @@ package fr.gtm.proxibanque.web;
  */
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,15 +60,23 @@ public class RetraitController {
 	 * @return Un retrait cash.
 	 */
 	@PostMapping("/liquide")
-	public String validateRetraitLiquide(@RequestParam Integer idClient, @RequestParam Integer compteDebit,
-			@RequestParam Double montant, Model model) {
 
-		String erreur = " retrait de " + montant + " validé";
+	public String validateRetraitLiquide(@RequestParam Integer idClient, @RequestParam Integer compteDebit, @RequestParam Double montant,  Model model) {
+		String erreur = null;
+		
+		if(montant>0) {
+		erreur = " retrait de "+montant+" validé";
 
 		try {
-			service.retraitLiquide(compteDebit, montant);
+			
+				service.retraitLiquide(compteDebit, montant);
+			
 		} catch (CompteException e) {
 			erreur = e.getMessage();
+		}
+		
+		}else {
+			erreur = "Merci de saisir un montant positif";
 		}
 
 		model.addAttribute("erreur", erreur);

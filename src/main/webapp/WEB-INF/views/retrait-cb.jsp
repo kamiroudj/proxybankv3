@@ -3,7 +3,9 @@
         <div class="row flex-center full-screen my-4">
             <div class="col-md-6">
                 <!-- Card -->
-                <span>${erreur}</span>
+                <div class="row d-flex justify-content-center">
+                	<span class="alert alert-primary">${erreur}</span>
+                </div>
                 <div class="card">
 
 
@@ -32,5 +34,6 @@
                     </div>
                 </div>
             </div>
+            <%@ include file="action-user.jsp"%> 
         </div>
 <%@ include file="footer.jsp"%> 

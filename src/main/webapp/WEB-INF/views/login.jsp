@@ -10,7 +10,7 @@
                 <h2>Bienvenue, pour commencer :</h2>
                 <form action="" method="post">
                     <div class="md-form active-pink active-pink-2 mb-3">
-                        <input class="form-control" type="text" name="search" placeholder="Veuillez saisir votre nom ou prénom" aria-label="Search">
+                        <input class="form-control" type="text" name="search" placeholder="Veuillez saisir votre nom ou Prénom ou votre Prénom et NOM" aria-label="Search">
                     </div>
                     <div class="text-center mt-4">
         				<button class="btn bg-bank-light" type="submit">Valider</button>
