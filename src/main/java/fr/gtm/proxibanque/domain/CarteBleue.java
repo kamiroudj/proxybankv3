@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class CarteBleue {
 
 	private Integer id;
-	private Integer numCarte;
+	private Long numCarte;
 	private String type;
 	private LocalDate dateExpiration;
 
@@ -31,7 +31,7 @@ public class CarteBleue {
 	 * @param dateExpiration
 	 *            La date d'expiration de la carte bancaire.
 	 */
-	public CarteBleue(Integer id, Integer numCarte, String type, LocalDate dateExpiration) {
+	public CarteBleue(Integer id, Long numCarte, String type, LocalDate dateExpiration) {
 		super();
 		this.id = id;
 		this.numCarte = numCarte;
@@ -47,11 +47,11 @@ public class CarteBleue {
 		this.id = id;
 	}
 
-	public Integer getNumCarte() {
+	public Long getNumCarte() {
 		return numCarte;
 	}
 
-	public void setNumCarte(Integer numCarte) {
+	public void setNumCarte(Long numCarte) {
 		this.numCarte = numCarte;
 	}
 
