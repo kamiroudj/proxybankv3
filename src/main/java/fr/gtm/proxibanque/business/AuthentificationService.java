@@ -31,7 +31,7 @@ public class AuthentificationService {
 	 * positif de search() et pour une réutilisation des résultats stockés dans les
 	 * components par les autres méthode du service.
 	 */
-	private Map<Integer, SearchComponent> searchCompoCollec = new HashMap<Integer, SearchComponent>();
+	private Map<Integer, SearchComponent> searchCompoCollec = new HashMap<>();
 
 	/**
 	 * Permet d'utiliser le component search pour et de récupérer l'id de ce

@@ -35,7 +35,6 @@ public class AuthentificationController {
 	@PostMapping("/login")
 	public String chercher(@RequestParam String search, Model model) {
 		String result = null;
-		/* final ModelAndView mav = new ModelAndView("verif-date"); */
 
 		if (this.service.search(search) != null) {
 			LOGGER.debug("----------CONTROLLER Search okok ----------- ");
@@ -44,7 +43,6 @@ public class AuthentificationController {
 			model.addAttribute("saisie", search);
 
 			result = "redirect:/verif-date.html";
-			// TODO envoi de l'id vers la vue verif date même page ou page differente?
 		} else {
 			LOGGER.debug("CONTROLLER Pas de client correspondant ");
 

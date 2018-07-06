@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.time.LocalDate;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -100,6 +101,7 @@ public class OperationsBancairesServiceTest {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void testRetraitChequierMoins3Mois() {
 		

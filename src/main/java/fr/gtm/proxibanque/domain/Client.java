@@ -43,6 +43,7 @@ public class Client {
 	public Client(Integer numClient, String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
 
 		super();
+		this.numClient = numClient;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;

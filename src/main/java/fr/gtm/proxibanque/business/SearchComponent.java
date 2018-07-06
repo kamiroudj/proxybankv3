@@ -65,7 +65,6 @@ public class SearchComponent {
 		Boolean result = false;
 		Integer searchId = 0;
 		LOGGER.debug("COMPONENT : Bien reçu " + saisie);
-		// TODO test sur le contains de l'espace et ajout requete prenomAndNom
 
 		if (saisie.contains(" ")) {
 			String[] arraySearch = saisie.split(" ");
@@ -92,7 +91,7 @@ public class SearchComponent {
 			}
 		}
 
-		if (result == true) {
+		if (result) {
 			searchId = SearchComponent.compteurId++;
 			LOGGER.debug("COMPONENT : result ok je défini l'id " + searchId);
 		}
