@@ -1,5 +1,10 @@
 package fr.gtm.proxibanque.web;
+/**
+ * RetraitController est la classe représentant la vue des retraits.
 
+ * @author Mohammed, Kamir et Arnauld.
+ * @version 3.0.
+ */
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -65,7 +70,7 @@ public class RetraitController {
 	
 	
 	@PostMapping("/chequier")
-	public String validateRetraitLiquide(@RequestParam Integer idClient, @RequestParam("compte") Integer idCompte,  Model model) {
+	public String validateRetraitChequier(@RequestParam Integer idClient, @RequestParam("compte") Integer idCompte,  Model model) {
 		
 		
 		String erreur = " retrait de chequier validé";
@@ -91,7 +96,7 @@ public class RetraitController {
 	}
 	
 	@PostMapping("/carte")
-	public String validateRetraitLiquide(@RequestParam Integer idClient, @RequestParam("compte") Integer idCompte,  @RequestParam String typeCB, Model model) {
+	public String validateRetraitCarte(@RequestParam Integer idClient, @RequestParam("compte") Integer idCompte,  @RequestParam String typeCB, Model model) {
 		
 		
 		String erreur = " retrait de carte validé";
