@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import fr.gtm.proxibanque.business.AuthentificationService;
-import fr.gtm.proxibanque.business.LoginException;
+
 
 /**
  * @author Adminl
@@ -38,7 +38,7 @@ public class AuthentificationController {
 	}
 
 	@PostMapping("/login")
-	public String chercher(@RequestParam String search, Model model) throws LoginException {
+	public String chercher(@RequestParam String search, Model model)  {
 		String result = null;
 		/* final ModelAndView mav = new ModelAndView("verif-date"); */
 
