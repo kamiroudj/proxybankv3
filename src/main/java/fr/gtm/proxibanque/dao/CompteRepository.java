@@ -10,5 +10,7 @@ import fr.gtm.proxibanque.domain.Compte;
 
 public interface CompteRepository extends JpaRepository<Compte, Integer>{
 
+	@Query("select c from Compte as c where c.client.id =:id")
+	public List<Compte> findComptesUnClient(@Param("id") Integer idClient);
 
 }

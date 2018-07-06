@@ -44,6 +44,9 @@
 	</entity>
 	
 	<entity class="fr.gtm.proxibanque.domain.Compte">
+<inheritance strategy="SINGLE_TABLE"></inheritance>
+	
+	
 		<attributes>
 			<id name="id">
 				<generated-value strategy="IDENTITY" />

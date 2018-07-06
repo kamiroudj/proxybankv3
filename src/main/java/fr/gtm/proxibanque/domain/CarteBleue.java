@@ -59,8 +59,8 @@ public class CarteBleue {
 		return TypeCarte.valueOf(type).name();
 	}
 
-	public void setType(TypeCarte type) {
-		this.type = type.name();
+	public void setType(String type) {
+		this.type = TypeCarte.valueOf(type).name();
 	}
 
 	public LocalDate getDateExpiration() {

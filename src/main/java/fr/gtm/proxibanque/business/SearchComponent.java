@@ -4,9 +4,14 @@
  */
 package fr.gtm.proxibanque.business;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.gtm.proxibanque.dao.ClientRepository;
+import fr.gtm.proxibanque.domain.Client;
 
 /**
  * @author Adminl
@@ -17,28 +22,59 @@ public class SearchComponent {
 	@Autowired
 	private ClientRepository dao;
 	
-	private Integer idSearch;
+	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
 	
-	private String searchContent;
+	private static Integer searchId = 0;
+
+	private List<Client> foundClient;
 	
-	//
-	public boolean search(String saisie) {
-		Boolean result = true;
-		
-		// 1 découper la saisie en deux String si le noms et prénoms sont saisis
-//		String[] resultArray = saisie.split(" ");
+	
+	
+	
+	/**
+	 * @return the idSearch
+	 */
+	public Integer getsearchId() {
+		return searchId;
+	}
 
-		// 2 vérifier si un de ces strings est en BDD dans les prénoms
-		
-//		this.dao.findByPrenom(resultArray[1]);
-//		this.dao.findByPrenom(resultArray[0]);
-		
 
-		// 3 vérifier si un des deux strings est en BDD dans les noms
-//		this.dao.findByNom(resultArray[1]);
-//		this.dao.findByNom(resultArray[0]);
+
+	/**
+	 * @param idSearch the idSearch to set
+	 */
+	public void setsearchId() {
+		SearchComponent.searchId = searchId++;
+	}
+
+
+
+
+	public Integer search(String saisie) {
+		Boolean result = false;
+		Integer searchId = null;
+		LOGGER.debug("COMPONENT : Bien reçu "+saisie);
+		String[] arraySearch = saisie.split(" ");
 		
-		return result;
+		//verification de la première partie de la saisie
+		if(this.dao.findByNom(arraySearch[0]) !=null || this.dao.findByPrenom(arraySearch[0]) != null){
+			LOGGER.debug("COMPONENT : j'ai trouvé un client champs 1");
+			result = true;
+			
+		}else if(this.dao.findByNom(arraySearch[1]) !=null || this.dao.findByPrenom(arraySearch[1]) != null) {
+			LOGGER.debug("COMPONENT : j'ai trouvé un client champs 2");
+			result = true;
+		}
+		
+		if(result==true) {
+			
+			// TODO vérifier si incrémenté?
+			this.setsearchId();
+			searchId = this.getsearchId();
+			LOGGER.debug("COMPONENT : result ok je défini l'id"+searchId);
+		}
+		
+		return searchId;
 	}
 	
 	
