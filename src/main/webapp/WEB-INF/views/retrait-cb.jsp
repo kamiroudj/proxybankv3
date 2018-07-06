@@ -3,7 +3,7 @@
         <div class="row flex-center full-screen my-4">
             <div class="col-md-6">
                 <!-- Card -->
-                <div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-content-center error">
                 	<span class="alert alert-primary">${erreur}</span>
                 </div>
                 <div class="card">
