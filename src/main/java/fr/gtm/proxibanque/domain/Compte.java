@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Compte {
 	
 	private Integer id;
-	private Integer numCompte;
+	private Long numCompte;
 	private LocalDate dateOuverture;
 	private Double solde;
 	private String libelle;
@@ -35,7 +35,7 @@ public class Compte {
 	 * @param libelle
 	 *            Le libelle.
 	 */
-	public Compte(Integer numCompte, LocalDate dateOuverture, Double solde, String libelle) {
+	public Compte(Long numCompte, LocalDate dateOuverture, Double solde, String libelle) {
 		super();
 		this.numCompte = numCompte;
 		this.dateOuverture = dateOuverture;
@@ -51,11 +51,11 @@ public class Compte {
 		this.id = id;
 	}
 
-	public Integer getNumCompte() {
+	public Long getNumCompte() {
 		return numCompte;
 	}
 
-	public void setNumCompte(Integer numCompte) {
+	public void setNumCompte(Long numCompte) {
 		this.numCompte = numCompte;
 	}
 

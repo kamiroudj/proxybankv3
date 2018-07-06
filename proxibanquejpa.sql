@@ -19,11 +19,11 @@ INSERT INTO `adresse` (`id`, `codePostal`, `lignePrincipale`, `ligneSecondaire`,
 --
 
 INSERT INTO `cartebleue` (`id`, `dateExpiration`, `numCarte`, `type`) VALUES
-(1, '2020-07-01', 2147483647, 'VISA_ELECTRON'),
-(2, '2020-07-02', 2147483647, 'VISA_PREMIER'),
-(3, '2020-07-03', 2147483647, 'VISA_ELECTRON'),
-(4, '2020-07-04', 2147483647, 'VISA_ELECTRON'),
-(5, '2020-07-05', 2147483647, 'VISA_PREMIER');
+(1, '2020-07-01', 2147483647001111, 'VISA_ELECTRON'),
+(2, '2020-07-02', 2147483647002222, 'VISA_PREMIER'),
+(3, '2020-07-03', 2147483647003333, 'VISA_ELECTRON'),
+(4, '2020-07-04', 2147483647004444, 'VISA_ELECTRON'),
+(5, '2020-07-05', 2147483647005555, 'VISA_PREMIER');
 
 -- --------------------------------------------------------
 
@@ -63,11 +63,11 @@ INSERT INTO `client` (`id`, `dateNaissance`, `nom`, `numClient`, `prenom`, `id_a
 --
 
 INSERT INTO `compte` (`id`, `dateOuverture`, `libelle`, `numCompte`, `solde`, `id_carte`, `id_chequier`) VALUES
-(1, '2018-01-01', 'COMPTE_COURANT', 2147483647, 7520, 2, 3),
-(2, '2018-01-02', 'COMPTE_COURANT', 2147483647, 75, 3, 4),
-(3, '2018-01-03', 'COMPTE_COURANT', 2147483647, 52, 4, 5),
-(4, '2018-01-04', 'COMPTE_EPARGNE', 2147483647, 75209, NULL, 1),
-(5, '2018-01-05', 'COMPTE_COURANT', 2147483647, 752094, 1, 2);
+(1, '2018-01-01', 'COMPTE_COURANT', 1002147483647, 7520, 2, 3),
+(2, '2018-01-02', 'COMPTE_COURANT', 2002147483647, 75, 3, 4),
+(3, '2018-01-03', 'COMPTE_COURANT', 3002147483647, 52, 4, 5),
+(4, '2018-01-04', 'COMPTE_EPARGNE', 4002147483647, 75209, NULL, 1),
+(5, '2018-01-05', 'COMPTE_COURANT', 5002147483647, 752094, 1, 2);
 
 -- --------------------------------------------------------
 
