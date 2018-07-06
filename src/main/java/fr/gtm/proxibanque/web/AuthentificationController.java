@@ -31,7 +31,14 @@ public class AuthentificationController {
 	public String login() {
 		return "login";
 	}
-
+	
+	/**
+	 * Methode permettant de récupérer la saisie de l'utilisateur en POST
+	 * et de l'envoyer à search()  de AuthentificationService pour validation.
+	 * @param search
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/login")
 	public String chercher(@RequestParam String search, Model model) {
 		String result = null;
@@ -51,7 +58,14 @@ public class AuthentificationController {
 
 		return result;
 	}
-
+	
+	/**
+	 * retourne la vue de verifaication de la date de naissance.
+	 * @param saisie
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/verif-date")
 	public String verifDate(@RequestParam String saisie, @RequestParam Integer id, Model model) {
 
@@ -60,7 +74,14 @@ public class AuthentificationController {
 
 		return "verif-date";
 	}
-
+	/**
+	 * Permet de récupérer la saisie de la date de naissance par l'utilisateur
+	 * en Post et de l'envoyer à la courche service pour vérification
+	 * @param date
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/verif-date")
 	public String getDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
 			@RequestParam Integer id, Model model) {

@@ -23,7 +23,6 @@ public class AuthentificationService {
 	@Autowired
 	private ObjectFactory<SearchComponent> facto;
 
-
 	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
 
 	/**
@@ -39,7 +38,8 @@ public class AuthentificationService {
 	 * L'id retournée permet de retrouver le component et les resultats de recherche
 	 * stocké à l'intérieur.
 	 * 
-	 * @param saisie La saisie de l'utilisateur.
+	 * @param saisie
+	 *            La saisie de l'utilisateur.
 	 * @return L'id recherché.
 	 * @throws LoginException
 	 */
@@ -71,8 +71,10 @@ public class AuthentificationService {
 	 * (verif-date.jsp) correspond à celle de l'un des clients trouvé et stocké par
 	 * le componentSearch lors de la première étape (login.jsp).
 	 * 
-	 * @param date La date de naissance.
-	 * @param id L'id du client.
+	 * @param date
+	 *            La date de naissance.
+	 * @param id
+	 *            L'id du client.
 	 * @return L'id du client.
 	 */
 	public Integer verifierDate(LocalDate date, Integer id) {

@@ -7,7 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import fr.gtm.proxibanque.domain.Compte;
-
+/**
+ * est l'interface permettant d'effectuer des requêtes en BDD
+ * sur cette entité.
+ * 
+ * @author Mohammed, Kamir et Arnauld.
+ * @version 3.0.
+ */
 public interface CompteRepository extends JpaRepository<Compte, Integer>{
 
 	@Query("select c from Compte as c where c.client.id =:id")
