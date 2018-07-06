@@ -1,5 +1,11 @@
 package fr.gtm.proxibanque.web;
 
+/**
+ * DashboardController est la classe représentant la vue des comptes.
+
+ * @author Mohammed, Kamir et Arnauld.
+ * @version 3.0.
+ */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +24,15 @@ public class DashboardController {
 	@Autowired
 	private OperationsBancairesService service;
 
+	/**
+	 * Permet de générer la liste des comptes d'un client.
+	 * 
+	 * @param idClient
+	 *            L'id du client.
+	 * @param model
+	 *            Le modèle.
+	 * @return La liste des comptes.
+	 */
 	@RequestMapping("/dashboard")
 	public String listeComptes(@RequestParam Integer idClient, Model model) {
 		List<Compte> comptes = service.findComptes(idClient);

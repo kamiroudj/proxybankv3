@@ -23,8 +23,6 @@ public class AuthentificationService {
 	@Autowired
 	private ObjectFactory<SearchComponent> facto;
 
-	@Autowired
-	private ClientRepository dao;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
 

@@ -66,10 +66,14 @@ public class VirementController {
 	public String validateVirement(@RequestParam Integer idClient, @RequestParam Integer compteDebit,
 			@RequestParam Integer compteCredit, @RequestParam Double montant, Model model) throws CompteException {
 
-		String erreur = " virement de " + montant + " validé";
+		String erreur = " Virement de " + montant + " validé";
 
 		if (compteDebit.equals(compteCredit)) {
-			erreur = " Veuillez saisir deux comptes différents";
+			erreur = " Veuillez saisir deux comptes différents.";
+			model.addAttribute("erreur", erreur);
+			return this.effectuerVirement(idClient, model);
+		}else if(montant <= 0) {
+			erreur = " Merci de saisir un montant positif.";
 			model.addAttribute("erreur", erreur);
 			return this.effectuerVirement(idClient, model);
 		}
