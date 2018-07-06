@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import fr.gtm.proxibanque.business.CompteException;
 import fr.gtm.proxibanque.domain.CarteBleue;
+import fr.gtm.proxibanque.domain.Chequier;
 import fr.gtm.proxibanque.domain.Compte;
 
 public class OperationsBancairesServiceTest {
@@ -63,22 +64,72 @@ public class OperationsBancairesServiceTest {
 	@Test
 	public void testRetraitCarteNonExpire() {
 		Compte compte = new Compte(122222256478L, LocalDate.parse("2020-01-02"), 250d, "COMPTE_COURANT");
-		CarteBleue cb = new CarteBleue(1234567893256471L, "VISA_PREMIER", LocalDate.parse("2018-01-02"));
+		CarteBleue cb = new CarteBleue(1234567893256471L, "VISA_PREMIER", LocalDate.parse("2019-07-02"));
 		compte.setCarteBleue(cb);
 		
 		try {
 			app.retraitCarte(compte, "VISA_ELECTRON");
 			fail("Vous retirez une carte non expiré");
 		} catch (CompteException e) {
-			assert(e.getMessage().contains("Vous ne pouvez pas retirer une carte avant son expiration"));
+			assert(e.getMessage().contains("Impossible d’effectuer le retrait, votre ancienne carte est encore valide"));
+		}
+	}
+	
+	@Test
+	public void testRetraitCarteExpire() {
+		Compte compte = new Compte(122222256478L, LocalDate.parse("2020-01-02"), 250d, "COMPTE_COURANT");
+		CarteBleue cb = new CarteBleue(1234567893256471L, "VISA_PREMIER", LocalDate.parse("2018-06-02"));
+		compte.setCarteBleue(cb);
+		
+		try {
+			app.retraitCarte(compte, "VISA_ELECTRON");
+		} catch (CompteException e) {
+			assert(e.getMessage().contains("Impossible d’effectuer le retrait, votre ancienne carte est encore valide"));
 		}
 	}
 	
 	
-
 	@Test
-	public void testRetraitCarte() {
-		fail("Not yet implemented");
+	public void testRetraitChequierNonExistant() {
+		
+		Compte compte = new Compte(122222256478L, LocalDate.parse("2018-01-02"), 250d, "COMPTE_COURANT");		
+		try {
+			app.retraitChequier(compte);
+		} catch (CompteException e) {
+			assert(e.getMessage().contains("Vous ne pouvez pas retirer un chequier à moins de 3 mois"));
+		}
 	}
+	
+	@Test
+	public void testRetraitChequierMoins3Mois() {
+		
+		Compte compte = new Compte(122222256478L, LocalDate.parse("2020-01-02"), 250d, "COMPTE_COURANT");
+		Chequier chequier = new Chequier(LocalDate.parse("2018-06-02"), LocalDate.parse("2018-06-10"));
+		compte.setChequier(chequier);
+		LocalDate dateValide = compte.getChequier().getDateReception();
+		
+		try {
+			app.retraitChequier(compte);
+		} catch (CompteException e) {
+			assert(e.getMessage().contains("Impossible d’effectuer le retrait d’un nouveau chéquier pour ce compte avant le"+ dateValide));
+		}
+	}
+	
+	
+	@Test
+	public void testRetraitChequierPlus3Mois() {
+		
+		Compte compte = new Compte(122222256478L, LocalDate.parse("2020-01-02"), 250d, "COMPTE_COURANT");
+		Chequier chequier = new Chequier(LocalDate.parse("2018-01-02"), LocalDate.parse("2018-01-10"));
+		compte.setChequier(chequier);
+		LocalDate dateValide = compte.getChequier().getDateReception();
+		
+		try {
+			app.retraitChequier(compte);
+		} catch (CompteException e) {
+			assert(e.getMessage().contains("Impossible d’effectuer le retrait d’un nouveau chéquier pour ce compte avant le"+ dateValide));
+		}
+	}
+
 
 }
