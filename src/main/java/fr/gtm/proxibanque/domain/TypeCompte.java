@@ -1,7 +1,7 @@
 package fr.gtm.proxibanque.domain;
 
 /**
- * TypeCompte est une énumération des types de l'objet Compte.
+ * TypeCompte est une énumération des types de Compte.
  * 
  * @author Mohammed, Kamir et Arnauld.
  * @version 3.0.

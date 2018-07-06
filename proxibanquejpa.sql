@@ -55,11 +55,12 @@ INSERT INTO `client` (`id`, `dateNaissance`, `nom`, `numClient`, `prenom`, `id_a
 --
 
 INSERT INTO `compte` (`id`, `dateOuverture`, `libelle`, `numCompte`, `solde`, `id_carte`, `id_chequier`) VALUES
-(1, '2018-01-01', 'COMPTE_COURANT', 2147483647, 7520, 2, 3),
-(2, '2018-01-02', 'COMPTE_COURANT', 2147483647, 75, 3, 4),
-(3, '2018-01-03', 'COMPTE_COURANT', 2147483647, 42, 4, 5),
-(4, '2018-01-04', 'COMPTE_EPARGNE', 2147483647, 75209, NULL, 1),
-(5, '2018-01-05', 'COMPTE_COURANT', 2147483647, 752094, 1, 2);
+(1, '2014-01-01', 'COMPTE_COURANT', 2147483647, 7520, 2, 3),
+(2, '2015-01-02', 'COMPTE_COURANT', 2147883647, 350, 3, 4),
+(3, '2016-02-03', 'COMPTE_COURANT', 2137483647, 800, 4, 5),
+(4, '2018-01-04', 'COMPTE_EPARGNE', 2147483547, 75209, NULL, 1),
+(5, '2017-01-05', 'COMPTE_COURANT', 2147183647, 752094, 1, 2),
+(6, '2018-06-04', 'COMPTE_COURANT', 2142483647, 752, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -72,8 +73,5 @@ INSERT INTO `compte_client` (`id_client`, `id_compte`) VALUES
 (1, 4),
 (1, 5),
 (3, 2),
-(4, 1);
-
---
--- Index pour les tables déchargées
---
+(4, 1),
+(1, 6);

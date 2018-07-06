@@ -8,8 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import fr.gtm.proxibanque.domain.Compte;
 /**
- * est l'interface permettant d'effectuer des requêtes en BDD
- * sur cette entité.
+ * est l'interface permettant d'effectuer des requêtes en BDD Compte
  * 
  * @author Mohammed, Kamir et Arnauld.
  * @version 3.0.

@@ -27,7 +27,7 @@ public class AuthentificationController {
 	@Autowired
 	AuthentificationService service;
 
-	@RequestMapping("/login")
+	@RequestMapping({"/index", "/login"})
 	public String login() {
 		return "login";
 	}

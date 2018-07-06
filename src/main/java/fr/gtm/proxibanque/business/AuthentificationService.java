@@ -1,10 +1,11 @@
 /**
- * Class de service regroupant les méthodes permettant d'authentifier le client
+ * Classe de service regroupant les méthodes permettant d'authentifier le client
  * lors de son accès au système
  */
 package fr.gtm.proxibanque.business;
 
 import java.time.LocalDate;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,10 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
-
-import fr.gtm.proxibanque.dao.ClientRepository;
 
 @Service
 public class AuthentificationService {
@@ -59,7 +57,7 @@ public class AuthentificationService {
 
 		} else {
 			// COMPONENT PAS OK = rien
-			LOGGER.debug("SERVICE : component ne renvoi rien");
+			LOGGER.debug("SERVICE : component ne renvoit rien");
 		}
 
 		return searchId;

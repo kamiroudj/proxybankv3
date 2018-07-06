@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import fr.gtm.proxibanque.domain.Chequier;
 
 /**
- * est l'interface permettant d'effectuer des requêtes en BDD
+ * est l'interface permettant d'effectuer des requêtes en BDD sur Chequier
  * sur cette entité.
  * 
  * @author Mohammed, Kamir et Arnauld.

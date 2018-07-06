@@ -21,6 +21,6 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="fixed-top my-4 text-center">
+        <div class="fixed-top my-4 text-left">
             <img src="<c:url value='/img/proxybank.png'/>" alt="" class="img-fluid mid-logo">
         </div>
