@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.gtm.proxibanque.business.OperationsBancairesService;
-import fr.gtm.proxibanque.business.RetraitException;
+import fr.gtm.proxibanque.business.CompteException;
 import fr.gtm.proxibanque.domain.Compte;
 
 
@@ -44,7 +44,7 @@ public class RetraitController {
 		
 		try {
 			service.retraitLiquide(compteDebit, montant);
-		} catch (RetraitException e) {
+		} catch (CompteException e) {
 			erreur = e.getMessage();			
 		}
 		
@@ -72,7 +72,7 @@ public class RetraitController {
 		
 		try {
 			service.retraitChequier(idCompte);
-		} catch (RetraitException e) {
+		} catch (CompteException e) {
 			erreur = e.getMessage();
 		}
 		
@@ -98,7 +98,7 @@ public class RetraitController {
 		
 		try {
 			service.retraitCarte(idCompte, typeCB);
-		} catch (RetraitException e) {
+		} catch (CompteException e) {
 			erreur = e.getMessage();
 		}
 		
