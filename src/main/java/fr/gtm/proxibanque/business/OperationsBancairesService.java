@@ -83,7 +83,7 @@ public class OperationsBancairesService {
 		Optional<Compte> cc = daocp.findById(idCompteCredit);
 		if (cd.isPresent()) compteDebit = cd.get();
 		if (cc.isPresent()) compteCredit = cc.get();
-		if (montant > 900 ) throw new CompteException("Vous ne pouvez pas retirer plus de 900 euros");	
+		if (montant > 900 ) throw new CompteException("Vous ne pouvez pas faire un virement de plus de 900 euros");	
 		if (montant > compteDebit.getSolde()) throw new CompteException("Solde insuffisant");
 		
 		compteDebit.setSolde(compteDebit.getSolde() -  montant);
