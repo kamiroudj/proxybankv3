@@ -45,8 +45,6 @@ public class AuthentificationService {
 		//si le component renvoi message d'erreur
 		
 		
-		
-		
 		return searchId;
 //		Conseiller conseiller = null;
 //		if (login != null && password != null) {

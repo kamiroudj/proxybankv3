@@ -23,7 +23,7 @@ public class SearchComponent {
 	
 	//
 	public boolean search(String saisie) {
-		Boolean result = false;
+		Boolean result = true;
 		
 		// 1 découper la saisie en deux String si le noms et prénoms sont saisis
 //		String[] resultArray = saisie.split(" ");
