@@ -2,6 +2,9 @@ package fr.gtm.proxibanque;
 
 
 
+import java.time.LocalDate;
+import java.util.Optional;
+
 import fr.gtm.proxibanque.business.CompteException;
 import fr.gtm.proxibanque.domain.Compte;
 import fr.gtm.proxibanque.domain.TypeCompte;
@@ -17,6 +20,17 @@ public class OperationsBancaires {
 		}else {
 			compteDebit.setSolde(compteDebit.getSolde() - montant);
 		}
-}
+	}
+	
+	
+	public void retraitCarte(Compte compte, String type) throws CompteException {
+		LocalDate today = LocalDate.now();
+		if (compte.getLibelle().equals(TypeCompte.COMPTE_EPARGNE.name())) throw new CompteException("Vous ne pouvez pas retirer une carte pour un compte epargne");
+		if (compte.getCarteBleue() != null) {					
+			if(compte.getCarteBleue().getDateExpiration().isAfter(today)) throw new CompteException("Vous ne pouvez pas retirer une carte avant son expiration");
+		}		
+	}
+	
+	
 	
 }

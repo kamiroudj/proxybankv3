@@ -42,7 +42,7 @@ public class AuthentificationService {
 	 * @return
 	 * @throws LoginException
 	 */
-	public Integer search(String saisie) throws LoginException {
+	public Integer search(String saisie) {
 		Integer searchId = null;
 		SearchComponent myCompo = this.facto.getObject();
 		

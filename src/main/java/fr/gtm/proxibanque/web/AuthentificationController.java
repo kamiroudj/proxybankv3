@@ -5,6 +5,7 @@ package fr.gtm.proxibanque.web;
 
 import java.time.LocalDate;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.gtm.proxibanque.business.AuthentificationService;
-import fr.gtm.proxibanque.business.LoginException;
+
 
 /**
  * @author Adminl
@@ -37,7 +38,7 @@ public class AuthentificationController {
 	}
 	
 	@PostMapping("/login")
-	public String chercher(@RequestParam String search, Model model) throws LoginException {
+	public String chercher(@RequestParam String search, Model model)  {
 		String result= null;
 		/*final ModelAndView mav = new ModelAndView("verif-date");*/
 		

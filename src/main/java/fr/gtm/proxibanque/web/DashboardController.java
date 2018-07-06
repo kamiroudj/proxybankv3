@@ -21,8 +21,7 @@ public class DashboardController {
 	private OperationsBancairesService service;	
 	
 	@RequestMapping("/dashboard")
-	public String listeClients(@RequestParam Integer idClient, Model model) {
-		//Integer idClient = 1;
+	public String listeComptes(@RequestParam Integer idClient, Model model) {
 		List<Compte> comptes = service.findComptes(idClient);
 		model.addAttribute("comptes", comptes);
 		model.addAttribute("idClient", idClient);
