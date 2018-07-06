@@ -2,6 +2,7 @@
  * Controller qui gère les vues d'authentification en deux etapes par nom et/ou prenom puis par date de naissance
  * 
  */
+
 package fr.gtm.proxibanque.web;
 
 import java.time.LocalDate;
@@ -16,14 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import fr.gtm.proxibanque.business.AuthentificationService;
 
-
-/**
- * @author Adminl
- *
- */
 @Controller
 public class AuthentificationController {
 
@@ -38,7 +33,7 @@ public class AuthentificationController {
 	}
 
 	@PostMapping("/login")
-	public String chercher(@RequestParam String search, Model model)  {
+	public String chercher(@RequestParam String search, Model model) {
 		String result = null;
 		/* final ModelAndView mav = new ModelAndView("verif-date"); */
 
