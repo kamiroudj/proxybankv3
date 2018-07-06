@@ -1,5 +1,5 @@
 /**
- * 
+ * Controller qui gère les vues d'authentification en deux etapes par nom et/ou prenom
  */
 package fr.gtm.proxibanque.web;
 
@@ -25,70 +25,65 @@ import fr.gtm.proxibanque.business.LoginException;
  */
 @Controller
 public class AuthentificationController {
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
-	
+
 	@Autowired
 	AuthentificationService service;
-	
+
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
-	
+
 	@PostMapping("/login")
 	public String chercher(@RequestParam String search, Model model) throws LoginException {
-		String result= null;
-		/*final ModelAndView mav = new ModelAndView("verif-date");*/
-		
-		if(this.service.search(search)!=null) {
+		String result = null;
+		/* final ModelAndView mav = new ModelAndView("verif-date"); */
+
+		if (this.service.search(search) != null) {
 			LOGGER.debug("----------CONTROLLER Search okok ----------- ");
 
 			model.addAttribute("id", this.service.search(search));
 			model.addAttribute("saisie", search);
-			
+
 			result = "redirect:/verif-date.html";
-			//TODO envoi de l'id vers la vue verif date même page ou page differente?
-		}else {
+			// TODO envoi de l'id vers la vue verif date même page ou page differente?
+		} else {
 			LOGGER.debug("CONTROLLER Pas de client correspondant ");
-			
+
 			result = "erreur-conseiller";
 		}
-		
-		return result;		
+
+		return result;
 	}
-	
+
 	@RequestMapping("/verif-date")
 	public String verifDate(@RequestParam String saisie, @RequestParam Integer id, Model model) {
-		
+
 		model.addAttribute("saisie", saisie);
 		model.addAttribute("id", id);
-		
+
 		return "verif-date";
 	}
-	
+
 	@PostMapping("/verif-date")
-	public String getDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, 
+	public String getDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
 			@RequestParam Integer id, Model model) {
 		LOGGER.debug("-------------CONTROLLER verifDate okok-------------- ");
 		String result = null;
-		
-		//vérifier la date
-		if(this.service.verifierDate(date, id)!=null) {
+
+		// vérifier la date
+		if (this.service.verifierDate(date, id) != null) {
 			LOGGER.debug("-------------CONTROLLER verifDate okok-------------- ");
-			//je passe au dashboard l'id du client trouvé
+			// je passe au dashboard l'id du client trouvé
 			model.addAttribute("idClient", this.service.verifierDate(date, id));
 			result = "redirect:/dashboard.html";
-		}else {
+		} else {
 			result = "erreur-conseiller";
 		}
-		
+
 		return result;
 	}
-	
-	
-	
-	
-	
-}
 
+}
