@@ -1,8 +1,10 @@
-/**
- * Controller qui gère les vues d'authentification en deux etapes par nom et/ou prenom
- */
 package fr.gtm.proxibanque.web;
+/**
+ * RetraitController est la classe représentant la vue de l'autentification des clients.
 
+ * @author Mohammed, Kamir et Arnauld.
+ * @version 3.0.
+ */
 import java.time.LocalDate;
 
 import org.slf4j.Logger;
@@ -17,13 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.gtm.proxibanque.business.AuthentificationService;
 
-
-/**
- * @author Adminl
- *
- */
 @Controller
 public class AuthentificationController {
+	
 
 	private static final Logger LOGGER = LoggerFactory.getLogger("fr.gtm.proxibanque");
 
