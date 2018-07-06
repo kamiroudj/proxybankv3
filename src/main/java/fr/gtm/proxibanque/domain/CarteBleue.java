@@ -22,8 +22,6 @@ public class CarteBleue {
 	/**
 	 * Constructeur CarteBleue
 	 * 
-	 * @param id
-	 *            L'id unique de la carte bleue.
 	 * @param numCarte
 	 *            Le numéro de la carte Bleue.
 	 * @param type

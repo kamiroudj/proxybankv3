@@ -26,8 +26,6 @@ public class Client {
 	/**
 	 * Constructeur Client.
 	 * 
-	 * @param id
-	 *            C'est l'id unique du client .
 	 * @param nom
 	 *            Le nom du client.
 	 * @param prenom
@@ -36,13 +34,12 @@ public class Client {
 	 *            La date de naissance du client.
 	 * @param adresse
 	 *            L'adresse du client;
-	 * @param clients
-	 *            La liste des clients d'une banque Broxibanque.
 	 */
 
 	public Client(Integer numClient, String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
 
 		super();
+		this.numClient= numClient;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
