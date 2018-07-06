@@ -111,7 +111,7 @@ public class OperationsBancairesServiceTest {
 		try {
 			app.retraitChequier(compte);
 		} catch (CompteException e) {
-			assert(e.getMessage().contains("Impossible d’effectuer le retrait d’un nouveau chéquier pour ce compte avant le"+ dateValide));
+			assert(e.getMessage().contains("Impossible d’effectuer le retrait d’un nouveau chéquier pour ce compte avant le "+ dateValide));
 		}
 	}
 	
